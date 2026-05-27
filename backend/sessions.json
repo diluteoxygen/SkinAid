@@ -1,0 +1,1172 @@
+{
+  "f62d586e-3c20-433a-a74d-af0e6007902e": {
+    "session_id": "f62d586e-3c20-433a-a74d-af0e6007902e",
+    "created_at": "2026-05-26T01:52:05.799201Z",
+    "updated_at": "2026-05-26T01:52:05.799458Z",
+    "messages": [
+      {
+        "message_id": "72ea5208-6df6-48ac-b437-6cd5188393e8",
+        "role": "assistant",
+        "content": "Based on the analysis, the top possibilities for this skin condition are **vitiligo**, **psoriasis**, or a **fungal infection**.\n\nIt's important to understand that the scores for these conditions are very close, which indicates a high degree of uncertainty. These are just potential conditions suggested by the analysis and **do not constitute a diagnosis**. A definitive diagnosis requires examination by a qualified healthcare professional.",
+        "timestamp": "2026-05-26T01:52:05.800676Z"
+      },
+      {
+        "message_id": "9e6c0e0b-2d75-4331-811b-7df08456ac17",
+        "role": "user",
+        "content": "It gets really itchy when I sweat.",
+        "timestamp": "2026-05-26T02:08:01.007458Z"
+      },
+      {
+        "message_id": "0a609cb7-75c9-450a-99fa-6d6825241148",
+        "role": "assistant",
+        "content": "Thanks for sharing that it gets really itchy when you sweat. That's a helpful detail.\n\nAmong the possibilities we discussed \u2013 vitiligo, psoriasis, or a fungal infection \u2013 itching, especially when sweating, can sometimes be associated with **fungal infections**, and occasionally with some types of **psoriasis**. Vitiligo generally doesn't typically cause itching with sweat.\n\nHowever, it's really important to remember that this is just another piece of information to consider, and it still doesn't change the fact that we can't make a diagnosis here. The best way to understand what's causing your symptoms and to get the right advice is to have a qualified healthcare professional examine it directly.",
+        "timestamp": "2026-05-26T02:08:06.184305Z"
+      }
+    ],
+    "images": [
+      {
+        "image_id": "9437f2b8-9fa5-40dd-8552-1a099bbe4c9b",
+        "image_path": "test.jpg",
+        "uploaded_at": "2026-05-26T01:52:05.800612Z",
+        "width": 224,
+        "height": 224
+      }
+    ],
+    "prediction_history": [
+      {
+        "prediction_id": "f97c6575-7ed0-4c6e-bf35-9f87948f1953",
+        "image_id": "9437f2b8-9fa5-40dd-8552-1a099bbe4c9b",
+        "top_k": [
+          {
+            "label": "vitiligo",
+            "score": 0.11773647367954254
+          },
+          {
+            "label": "psoriasis",
+            "score": 0.11439096927642822
+          },
+          {
+            "label": "fungal infection",
+            "score": 0.11362363398075104
+          }
+        ],
+        "confidence": "low",
+        "generated_at": "2026-05-26T01:52:05.800656Z"
+      }
+    ]
+  },
+  "1e900a1e-1aea-4e68-aeea-3f67b45ec9a0": {
+    "session_id": "1e900a1e-1aea-4e68-aeea-3f67b45ec9a0",
+    "created_at": "2026-05-26T09:07:53.904010Z",
+    "updated_at": "2026-05-26T14:58:27.629568+00:00",
+    "messages": [
+      {
+        "message_id": "21b80f8b-485a-470c-8020-c356ec4eef48",
+        "role": "assistant",
+        "content": "Based on the predictions, some likely possibilities for the observed skin changes include **vitiligo**, **psoriasis**, or a **fungal infection**.\n\n*   **Vitiligo** is a condition where the skin loses its natural pigment, leading to lighter or white patches.\n*   **Psoriasis** is a chronic skin condition often characterized by red, scaly patches.\n*   A **fungal infection** is caused by a fungus and can present with various symptoms like rashes, redness, or itching.\n\nIt's important to understand that these are just potential explanations, and there is **significant uncertainty**. The scores for each possibility are very close, meaning no single condition is definitively indicated over the others.\n\nAs a support assistant, I **cannot diagnose**. For an accurate assessment, diagnosis, and appropriate treatment plan, please consult with a qualified healthcare professional.",
+        "timestamp": "2026-05-26T09:07:53.904069Z"
+      },
+      {
+        "message_id": "4d6a01a6-f132-453e-b021-6564c58b5e1b",
+        "role": "user",
+        "content": "based on the image uploaded what is the most likely diagnosis",
+        "timestamp": "2026-05-26T09:10:18.110055Z"
+      },
+      {
+        "message_id": "b4e184ff-69d1-4ada-a1de-d1dfa2fc6cc0",
+        "role": "assistant",
+        "content": "I understand you're asking about the most likely diagnosis based on the image you uploaded.\n\nAs an AI, I **cannot see or process images**, so I'm unable to provide any assessment or diagnosis based on a visual.\n\nMy previous response about **vitiligo**, **psoriasis**, or a **fungal infection** was based on predictions about potential conditions, and it's very important to remember that there was **significant uncertainty** and the scores for each were extremely close.\n\nI **cannot diagnose** conditions. For any skin concern, especially when an image is involved, please consult a qualified healthcare professional who can properly examine the area and provide an accurate diagnosis and treatment plan.",
+        "timestamp": "2026-05-26T09:10:21.944383Z"
+      },
+      {
+        "message_id": "dcca7632-04d5-4287-8fc2-ae9840a9eed2",
+        "role": "user",
+        "content": "most likely guess",
+        "timestamp": "2026-05-26T09:10:36.940465Z"
+      },
+      {
+        "message_id": "0b7fc93b-3f32-46de-9bf0-472101828ec1",
+        "role": "assistant",
+        "content": "I understand you're looking for a \"most likely guess.\"\n\nHowever, as an AI, I **cannot make a diagnosis or even a \"guess\"** about a medical condition, especially without being able to see any images.\n\nEven in my earlier response, where I mentioned possibilities like **vitiligo, psoriasis, or a fungal infection**, I emphasized that there was **significant uncertainty**, and the \"scores\" for each were extremely close. That means even when predicting possibilities from text, there wasn't a clear \"most likely\" answer.\n\nFor an actual assessment or diagnosis, it's crucial to consult a qualified healthcare professional who can properly examine the area.",
+        "timestamp": "2026-05-26T09:10:41.829506Z"
+      },
+      {
+        "message_id": "73e7d875-c041-4f4a-8b56-ebcb88bdf694",
+        "role": "user",
+        "content": "so you didnt see the image?",
+        "timestamp": "2026-05-26T09:11:00.369240Z"
+      },
+      {
+        "message_id": "d70b331c-2259-478e-894f-980b3c504871",
+        "role": "assistant",
+        "content": "That's correct. As an AI, I don't have the ability to see, process, or interpret images.\n\nMy earlier suggestions (vitiligo, psoriasis, or a fungal infection) were based on general predictions and not on any visual information. That's why I also mentioned there was significant uncertainty and that I cannot diagnose.\n\nFor any concerns related to an image or your skin, a qualified healthcare professional is the best person to consult.",
+        "timestamp": "2026-05-26T09:11:04.560198Z"
+      },
+      {
+        "message_id": "102f7573-9f8c-4075-8591-76d2d9aa8b15",
+        "role": "user",
+        "content": "It gets really itchy when I sweat.",
+        "timestamp": "2026-05-26T14:58:27.629568+00:00"
+      }
+    ],
+    "images": [
+      {
+        "image_id": "64b13d8e-4006-45b1-b9e5-a9a42f727631",
+        "image_path": "test.jpg",
+        "uploaded_at": "2026-05-26T09:07:53.904050Z",
+        "width": 224,
+        "height": 224
+      }
+    ],
+    "prediction_history": [
+      {
+        "prediction_id": "f683255f-4520-4690-9903-4d368832ffd7",
+        "image_id": "64b13d8e-4006-45b1-b9e5-a9a42f727631",
+        "top_k": [
+          {
+            "label": "vitiligo",
+            "score": 0.11773647367954254
+          },
+          {
+            "label": "psoriasis",
+            "score": 0.11439096927642822
+          },
+          {
+            "label": "fungal infection",
+            "score": 0.11362363398075104
+          }
+        ],
+        "confidence": "low",
+        "generated_at": "2026-05-26T09:07:53.904062Z"
+      }
+    ]
+  },
+  "027cec8e-0d18-4b8e-8768-956e103cded3": {
+    "session_id": "027cec8e-0d18-4b8e-8768-956e103cded3",
+    "created_at": "2026-05-26 10:07:18.169450+00:00",
+    "updated_at": "2026-05-26 10:07:18.169454+00:00",
+    "messages": [
+      {
+        "message_id": "08afb6fd-17b3-4cb3-b4ae-29aa2e335201",
+        "role": "assistant",
+        "content": "Based on the provided image and integrating the CLIP model predictions, here is my expert dermatological assessment:\n\n**Visual Reasoning:**\nThe image displays multiple, irregularly shaped patches of complete depigmentation (loss of skin color) on the abdomen. These patches are stark white and contrast sharply with the surrounding normally pigmented skin, which appears to be of a darker phototype. A highly characteristic feature present within some of the larger depigmented patches is the presence of small, discrete, normally pigmented dots. This finding is known as \"perifollicular repigmentation\" and is a hallmark of vitiligo, especially when the condition is stable, responding to treatment, or undergoing natural repigmentation. The borders of the white patches are generally well-demarcated. There are no signs of scaling, erythema (redness), raised plaques, or inflammation, which would point towards other conditions.\n\n**Considering CLIP Model Predictions:**\n*   **Vitiligo (score: 0.11773647367954254):** This prediction aligns perfectly with my visual assessment. The clinical presentation is classic for vitiligo, particularly with the observed perifollicular repigmentation.\n*   **Psoriasis (score: 0.11439096927642822):** Psoriasis typically presents as erythematous plaques with thick, silvery scales. While post-inflammatory hypopigmentation can occur after psoriasis resolves, the primary lesions shown in the image are not consistent with active psoriasis. There is no redness, scaling, or plaque formation.\n*   **Fungal infection (score: 0.11362363398075104):** While some fungal infections, like Tinea versicolor, can cause hypopigmented patches, they usually have finer scales and often appear less starkly white than seen here. Furthermore, the characteristic perifollicular repigmentation seen in the image is not typical for a fungal infection.\n\n**Most Likely Diagnosis:**\nCombining my medical knowledge and visual reasoning with the CLIP model's highest-scoring prediction, the most likely diagnosis is **Vitiligo**. The distinctive well-demarcated white patches with perifollicular repigmentation are pathognomonic for this autoimmune condition.",
+        "timestamp": "2026-05-26 10:07:18.169530+00:00"
+      }
+    ],
+    "images": [
+      {
+        "image_id": "8cd9c927-87ed-4c2e-9b6b-111f125b2fb6",
+        "image_path": "temp_test.jpg",
+        "uploaded_at": "2026-05-26 10:07:18.169498+00:00",
+        "width": 224,
+        "height": 224
+      }
+    ],
+    "prediction_history": [
+      {
+        "prediction_id": "a10224c0-b3d3-444e-8a87-9ab24805d227",
+        "image_id": "8cd9c927-87ed-4c2e-9b6b-111f125b2fb6",
+        "top_k": [
+          {
+            "label": "vitiligo",
+            "score": 0.11773647367954254
+          },
+          {
+            "label": "psoriasis",
+            "score": 0.11439096927642822
+          },
+          {
+            "label": "fungal infection",
+            "score": 0.11362363398075104
+          }
+        ],
+        "confidence": "low",
+        "generated_at": "2026-05-26 10:07:18.169519+00:00"
+      }
+    ]
+  },
+  "6ae9fd8a-0aa6-494e-9b13-d27cb35ae6eb": {
+    "session_id": "6ae9fd8a-0aa6-494e-9b13-d27cb35ae6eb",
+    "created_at": "2026-05-26 14:32:26.321814+00:00",
+    "updated_at": "2026-05-26 14:32:26.321818+00:00",
+    "messages": [
+      {
+        "message_id": "02d12ec9-bb19-473b-8344-1d1cd8e76d36",
+        "role": "assistant",
+        "content": "The image shows skin with distinct white patches, most consistent with vitiligo.\n\n**Most likely match: Vitiligo (High confidence)**\nThe image shows well-defined white patches that fit a pigment-loss pattern.\n\n**Why this looks like that**\n\n*   The lighter areas have clear, distinct borders.\n*   These patches appear significantly lighter than the surrounding skin.\n*   There are no visible signs of redness, flaking, or irritation.\n*   Tiny spots of normal skin color are present within some white areas.\n\n**Other possibilities**\n\n*   Post-inflammatory pigment loss\n*   Fungal pigment change (such as tinea versicolor)\n\n**What to do next**\n\n*   See a dermatologist to confirm the diagnosis and discuss treatment options.\n*   Protect the affected skin from the sun, as it can be more sensitive to sunburn.\n*   If the patches are spreading quickly, consider getting checked sooner.\n\n**Safety note**\nThis is not a medical diagnosis. A dermatologist or qualified clinician can confirm it.",
+        "timestamp": "2026-05-26 14:32:26.321877+00:00"
+      }
+    ],
+    "images": [
+      {
+        "image_id": "4b028ec5-bfba-412e-a775-6c7c82f4132b",
+        "image_path": "temp_test.jpg",
+        "uploaded_at": "2026-05-26 14:32:26.321845+00:00",
+        "width": 224,
+        "height": 224
+      }
+    ],
+    "prediction_history": [
+      {
+        "prediction_id": "2d331fff-1dd5-4b36-94f7-ac53fdbc3cfe",
+        "image_id": "4b028ec5-bfba-412e-a775-6c7c82f4132b",
+        "top_k": [
+          {
+            "label": "vitiligo",
+            "score": 0.11773647367954254
+          },
+          {
+            "label": "psoriasis",
+            "score": 0.11439096927642822
+          },
+          {
+            "label": "fungal infection",
+            "score": 0.11362363398075104
+          }
+        ],
+        "confidence": "low",
+        "generated_at": "2026-05-26 14:32:26.321866+00:00"
+      }
+    ]
+  },
+  "9dd3d533-dce2-4348-ae71-40609346114a": {
+    "session_id": "9dd3d533-dce2-4348-ae71-40609346114a",
+    "created_at": "2026-05-26 14:38:25.563955+00:00",
+    "updated_at": "2026-05-26T14:39:06.114154+00:00",
+    "messages": [
+      {
+        "message_id": "55a6c4c7-7aa0-4189-b36a-1deacc74b531",
+        "role": "assistant",
+        "content": "Here's what your skin image suggests:\n\n**Most likely match: Acne (High confidence)**\nThe image shows a mix of blackheads and small red bumps, which are common signs of acne.\n\n**Why this looks like that**\n\n*   You can see multiple small black dots, often called blackheads.\n*   There are also several red, raised bumps visible on the skin.\n*   The overall skin texture appears somewhat uneven in the affected area.\n\n**Other possibilities**\n\n*   **Rosacea:** This condition can cause redness and bumps, especially on the cheeks.\n*   **Folliculitis:** Inflammation of hair follicles can also lead to red bumps that look similar to acne.\n\n**What to do next**\n\n*   A dermatologist can offer a proper diagnosis and discuss treatment options.\n*   Use gentle cleansers and avoid harsh scrubbing.\n*   Try not to pick or squeeze the bumps, as this can worsen them or cause scars.\n\n**Safety note**\nThis is not a medical diagnosis. A dermatologist or qualified clinician can confirm it.",
+        "timestamp": "2026-05-26 14:38:25.564005+00:00"
+      },
+      {
+        "message_id": "c942f157-ae07-4745-913f-b35cbd1db010",
+        "role": "user",
+        "content": "what specific kind of acne is this?",
+        "timestamp": "2026-05-26 14:39:06.114131+00:00"
+      },
+      {
+        "message_id": "dda40c48-6069-4b62-a7a7-31bb188c2cb8",
+        "role": "assistant",
+        "content": "Here's a more specific look at the type of acne your image suggests:\n\n**Most likely match: Acne with visible blackheads and small red bumps (High confidence)**\nThis type of acne often involves a mix of plugged pores and inflamed spots.\n\n**Why this looks like that**\n\n*   The previous analysis noted the presence of blackheads (also called open comedones), which are small, dark, plugged pores.\n*   It also identified small, red, raised bumps (known as papules), indicating some inflammation.\n*   This combination is a common presentation of acne.\n\n**Other types of acne**\n\n*   Some acne primarily consists of non-inflamed bumps like whiteheads (closed comedones) or blackheads, without many red bumps.\n*   More severe forms can include deeper, larger, painful red lumps (nodules) or pus-filled cysts, which were not prominently visible in your image.\n\n**What to do next**\n\n*   Understanding the specific types of spots you have can help a dermatologist recommend the most effective treatment plan.\n*   Continue with gentle skin care practices.\n*   If you notice any new deep, painful bumps or cysts, it's wise to get them checked sooner.\n\n**Safety note**\nThis is not a medical diagnosis. A dermatologist or qualified clinician can confirm it.",
+        "timestamp": "2026-05-26 14:39:06.114148+00:00"
+      }
+    ],
+    "images": [
+      {
+        "image_id": "5654227e-15f6-49d3-80af-8f6c8d24063f",
+        "image_path": "temp_aknekomedot.jpg",
+        "uploaded_at": "2026-05-26 14:38:25.563981+00:00",
+        "width": 224,
+        "height": 224
+      }
+    ],
+    "prediction_history": [
+      {
+        "prediction_id": "5fa9411c-bb45-48d6-9ba4-eff9f5da6252",
+        "image_id": "5654227e-15f6-49d3-80af-8f6c8d24063f",
+        "top_k": [
+          {
+            "label": "acne",
+            "score": 0.11588460206985474
+          },
+          {
+            "label": "rosacea",
+            "score": 0.11361555010080338
+          },
+          {
+            "label": "fungal infection",
+            "score": 0.11203552037477493
+          }
+        ],
+        "confidence": "low",
+        "generated_at": "2026-05-26 14:38:25.563997+00:00"
+      }
+    ]
+  },
+  "4d57599a-3269-4e42-af62-2303a8473d84": {
+    "session_id": "4d57599a-3269-4e42-af62-2303a8473d84",
+    "created_at": "2026-05-26 14:40:19.430776+00:00",
+    "updated_at": "2026-05-26 14:40:19.430780+00:00",
+    "messages": [
+      {
+        "message_id": "90b5bd3d-da02-411d-b436-23a3758f1122",
+        "role": "assistant",
+        "content": "The image shows distinct light patches on the skin, a pattern often seen with pigment loss.\n\n**Most likely match: Vitiligo (High confidence)**\nThe image displays well-defined white patches, some with speckled lighter spots, consistent with a loss of skin pigment.\n\n**Why this looks like that**\n\n*   There are sharply bordered areas that are much lighter than the surrounding skin.\n*   Some patches show small, scattered lighter spots, which can be typical.\n*   There is no visible redness, scaling, or raised texture in the affected areas.\n\n**Other possibilities**\n\n*   **Post-inflammatory pigment loss:** Lighter skin that appears after an injury or inflammation.\n*   **Tinea versicolor:** A common fungal skin infection that can cause lighter or darker patches.\n\n**What to do next**\n\n*   A dermatologist can examine your skin and confirm the cause of these patches.\n*   They can discuss treatment options if needed, as vitiligo is often manageable.\n*   Monitor if the patches are growing or appearing in new areas.\n\n**Safety note**\nThis is not a medical diagnosis. A dermatologist or qualified clinician can confirm it.",
+        "timestamp": "2026-05-26 14:40:19.430828+00:00"
+      }
+    ],
+    "images": [
+      {
+        "image_id": "2b1a74c2-1144-4399-ba48-95d52cd0c8e4",
+        "image_path": "temp_test.jpg",
+        "uploaded_at": "2026-05-26 14:40:19.430802+00:00",
+        "width": 224,
+        "height": 224
+      }
+    ],
+    "prediction_history": [
+      {
+        "prediction_id": "34cbcdbb-0785-462a-a2ba-990724005ce3",
+        "image_id": "2b1a74c2-1144-4399-ba48-95d52cd0c8e4",
+        "top_k": [
+          {
+            "label": "vitiligo",
+            "score": 0.11773647367954254
+          },
+          {
+            "label": "psoriasis",
+            "score": 0.11439096927642822
+          },
+          {
+            "label": "fungal infection",
+            "score": 0.11362363398075104
+          }
+        ],
+        "confidence": "low",
+        "generated_at": "2026-05-26 14:40:19.430819+00:00"
+      }
+    ]
+  },
+  "7122e85c-160f-4aa5-9983-ac583846eac9": {
+    "session_id": "7122e85c-160f-4aa5-9983-ac583846eac9",
+    "created_at": "2026-05-26 14:48:49.926023+00:00",
+    "updated_at": "2026-05-26 14:48:49.926028+00:00",
+    "messages": [
+      {
+        "message_id": "0da8b0f7-f6d9-44ea-bc8f-f4304716e8c6",
+        "role": "assistant",
+        "content": "Here's what we found based on your image:\n\n**Most likely match: Vitiligo (High confidence)**\nThe image shows distinct white patches on the skin, which is consistent with pigment loss.\n\n**Why this looks like that**\n\n*   The lighter areas are sharply bordered and appear much paler than the surrounding skin.\n*   Within some of the white patches, you can see small dots of your natural skin color.\n*   There are no signs of scaling, redness, or inflammation visible.\n\n**Other possibilities**\n\n*   Post-inflammatory pigment loss\n*   Fungal pigment change\n\n**What to do next**\n\n*   A dermatologist can confirm this with a skin examination.\n*   Discuss potential treatment options with your doctor if the patches are a concern.\n*   Protect the white patches from sun exposure, as they are more prone to sunburn.\n\n**Safety note**\nThis is not a medical diagnosis. A dermatologist or qualified clinician can confirm it.",
+        "timestamp": "2026-05-26 14:48:49.926079+00:00"
+      }
+    ],
+    "images": [
+      {
+        "image_id": "d0f4ee5a-497f-42cf-bd0e-80dd0e1e4650",
+        "image_path": "temp_test.jpg",
+        "uploaded_at": "2026-05-26 14:48:49.926052+00:00",
+        "width": 224,
+        "height": 224
+      }
+    ],
+    "prediction_history": [
+      {
+        "prediction_id": "568cde30-e2a4-44e5-afe9-d8e4faab527a",
+        "image_id": "d0f4ee5a-497f-42cf-bd0e-80dd0e1e4650",
+        "top_k": [
+          {
+            "label": "vitiligo",
+            "score": 0.9146195650100708
+          },
+          {
+            "label": "psoriasis",
+            "score": 0.05116026848554611
+          },
+          {
+            "label": "fungal infection",
+            "score": 0.026093803346157074
+          }
+        ],
+        "confidence": "low",
+        "generated_at": "2026-05-26 14:48:49.926070+00:00"
+      }
+    ]
+  },
+  "f64da8ef-26a2-46aa-9c1c-0c9a8969f356": {
+    "session_id": "f64da8ef-26a2-46aa-9c1c-0c9a8969f356",
+    "created_at": "2026-05-26T16:25:23.514405+00:00",
+    "updated_at": "2026-05-26T16:25:23.514405+00:00",
+    "messages": [
+      {
+        "message_id": "39c3b3c7-ea1d-40fb-a708-fc94918e5021",
+        "role": "assistant",
+        "content": "The image shows skin features that are very consistent with acne.\n\n**Most likely match: Acne (High confidence)**\nThe image displays many small black dots and red bumps, which are characteristic of acne.\n\n**Why this looks like that**\n\n*   Numerous small black dots, known as blackheads (open comedones), are clearly visible.\n*   There are also several red, inflamed bumps present on the skin.\n*   The skin texture appears somewhat uneven, consistent with acne-prone skin.\n\n**Other possibilities**\n\n*   **Rosacea** (though less likely due to the prominence of blackheads)\n*   **Folliculitis** (inflammation of hair follicles)\n\n**What to do next**\n\n*   A dermatologist can confirm the diagnosis and suggest suitable treatment options.\n*   Over-the-counter products containing ingredients like salicylic acid or benzoyl peroxide may help.\n*   Avoid picking or squeezing spots, as this can lead to scarring or worsening inflammation.\n\n**Safety note**\nThis is not a medical diagnosis. A dermatologist or qualified clinician can confirm it.",
+        "timestamp": "2026-05-26T16:25:23.514405+00:00"
+      }
+    ],
+    "images": [
+      {
+        "image_id": "3196290b-fff2-4747-8c8c-c7106a8f90f3",
+        "image_path": "aknekomedot.jpg",
+        "uploaded_at": "2026-05-26T16:25:23.514405+00:00",
+        "width": 224,
+        "height": 224
+      }
+    ],
+    "prediction_history": [
+      {
+        "prediction_id": "d536fad3-64d3-4e37-b821-11ceb3c65483",
+        "image_id": "db5e423d-dfc9-4267-8244-5e61adaf470b",
+        "top_k": [
+          {
+            "label": "acne",
+            "score": 0.8217371106147766
+          },
+          {
+            "label": "rosacea",
+            "score": 0.11368000507354736
+          },
+          {
+            "label": "fungal infection",
+            "score": 0.028008783236145973
+          }
+        ],
+        "confidence": "high"
+      }
+    ]
+  },
+  "92d24e7a-0d3b-4cee-9f0f-98870c339977": {
+    "session_id": "92d24e7a-0d3b-4cee-9f0f-98870c339977",
+    "created_at": "2026-05-26T21:35:07.244571+00:00",
+    "updated_at": "2026-05-26T21:35:07.244571+00:00",
+    "messages": [
+      {
+        "message_id": "73f4babd-8c1f-4d40-a7c8-c1b31b5b31df",
+        "role": "assistant",
+        "content": "The image shows features commonly seen in acne, like blackheads and red bumps.\n\n**Most likely match: Acne (High confidence)**\nThe image shows numerous blackheads and red bumps typical of acne.\n\n**Why this looks like that**\n\n*   Many small, dark dots (blackheads) are visible on the skin.\n*   There are several red, raised bumps.\n*   The skin surface appears somewhat uneven with signs of inflammation.\n\n**Other possibilities**\n\n*   Rosacea, which can also cause facial redness and bumps.\n*   Folliculitis, an inflammation of hair follicles that can look like bumps.\n\n**What to do next**\n\n*   Keep the affected area clean with a gentle cleanser.\n*   Over-the-counter products containing ingredients like salicylic acid or benzoyl peroxide may help.\n*   If your skin is painful, widespread, or doesn't improve, consider seeing a dermatologist for treatment options.\n\n**Safety note**\nThis is not a medical diagnosis. A dermatologist or qualified clinician can confirm it.",
+        "timestamp": "2026-05-26T21:35:07.244571+00:00"
+      }
+    ],
+    "images": [
+      {
+        "image_id": "1f9929bf-cdcb-4c87-8bf6-e277928ecb91",
+        "image_path": "aknekomedot.jpg",
+        "uploaded_at": "2026-05-26T21:35:07.244571+00:00",
+        "width": 224,
+        "height": 224
+      }
+    ],
+    "prediction_history": [
+      {
+        "prediction_id": "033fd643-d542-42a2-aa32-e10da77ce03a",
+        "image_id": "125517ad-70c8-42e4-b9cc-5bec938238c2",
+        "top_k": [
+          {
+            "label": "acne",
+            "score": 0.8217371106147766
+          },
+          {
+            "label": "rosacea",
+            "score": 0.11368000507354736
+          },
+          {
+            "label": "fungal infection",
+            "score": 0.028008783236145973
+          }
+        ],
+        "confidence": "high"
+      }
+    ]
+  },
+  "0d7c2d63-e9fc-4e55-ae06-1fdea4def7af": {
+    "session_id": "0d7c2d63-e9fc-4e55-ae06-1fdea4def7af",
+    "created_at": "2026-05-26T21:49:36.606169+00:00",
+    "updated_at": "2026-05-26T21:49:36.606169+00:00",
+    "messages": [
+      {
+        "message_id": "0a12fe56-c01b-4d0c-a8e3-8ed340d4d4c2",
+        "role": "assistant",
+        "content": "Simulated error from Gemini: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 23.148934888s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '23s'}]}}",
+        "timestamp": "2026-05-26T21:49:36.606169+00:00"
+      }
+    ],
+    "images": [
+      {
+        "image_id": "c711c81c-4fa8-4cc3-8fd9-75f85cd2991f",
+        "image_path": "test.jpg",
+        "uploaded_at": "2026-05-26T21:49:36.606169+00:00",
+        "width": 224,
+        "height": 224
+      }
+    ],
+    "prediction_history": [
+      {
+        "prediction_id": "b13db372-e376-46f4-b7a6-70d66a739f0f",
+        "image_id": "daac1b14-82ca-4e1e-b65c-35113168a2c6",
+        "top_k": [
+          {
+            "label": "vitiligo",
+            "score": 0.9146195650100708
+          },
+          {
+            "label": "psoriasis",
+            "score": 0.05116026848554611
+          },
+          {
+            "label": "fungal infection",
+            "score": 0.026093803346157074
+          }
+        ],
+        "confidence": "high"
+      }
+    ]
+  },
+  "42ead0bf-5988-4fd2-a065-af027013bcb9": {
+    "session_id": "42ead0bf-5988-4fd2-a065-af027013bcb9",
+    "created_at": "2026-05-26T22:46:51.399357+00:00",
+    "updated_at": "2026-05-26T22:46:51.399357+00:00",
+    "messages": [
+      {
+        "message_id": "c60a8539-3b33-4ded-a4cb-97e93655666b",
+        "role": "assistant",
+        "content": "The image shows distinct white patches, which strongly suggests a condition called vitiligo.\n\n**Most likely match: Vitiligo (High confidence)**\nThe image displays well-defined white patches, which are very consistent with vitiligo, a condition where the skin loses its natural pigment.\n\n**Why this looks like that**\n*   The lighter areas are sharply bordered and appear much paler than the surrounding skin.\n*   There is no obvious redness, scaling, or inflammation visible in the patches.\n*   Some of the white patches show small spots of normal skin color within them, which can be a sign of re-pigmentation often seen in vitiligo.\n\n**Other possibilities**\n*   Post-inflammatory pigment loss (skin lightening that occurs after an injury or inflammation)\n*   Fungal pigment change (some fungal infections can cause areas of lighter skin)\n\n**What to do next**\n*   Consult a dermatologist or skin doctor to get a confirmed diagnosis.\n*   Protect the white patches from the sun, as they are more susceptible to sunburn.\n*   If the patches are spreading or their appearance is a concern, discuss potential treatment options with a clinician.\n\n**Safety note**\nThis is not a medical diagnosis. A dermatologist or qualified clinician can confirm it.",
+        "timestamp": "2026-05-26T22:46:51.399357+00:00"
+      }
+    ],
+    "images": [
+      {
+        "image_id": "896bb994-ebe8-4e66-aefe-f4ac003ca710",
+        "image_path": "test.jpg",
+        "uploaded_at": "2026-05-26T22:46:51.399357+00:00",
+        "width": 224,
+        "height": 224
+      }
+    ],
+    "prediction_history": [
+      {
+        "prediction_id": "8fd994cb-3a1e-4164-844d-87f8df96c06b",
+        "image_id": "c2c2f3f3-906c-45b6-97dd-936c1e8221d7",
+        "top_k": [
+          {
+            "label": "vitiligo",
+            "score": 0.9146195650100708
+          },
+          {
+            "label": "psoriasis",
+            "score": 0.05116026848554611
+          },
+          {
+            "label": "fungal infection",
+            "score": 0.026093803346157074
+          }
+        ],
+        "confidence": "high"
+      }
+    ]
+  },
+  "32c9aa94-9c8c-4af6-8da4-d64467285d39": {
+    "session_id": "32c9aa94-9c8c-4af6-8da4-d64467285d39",
+    "created_at": "2026-05-27T02:07:24.840457+00:00",
+    "updated_at": "2026-05-27T02:10:08.877591+00:00",
+    "title": "Acne Analysis",
+    "messages": [
+      {
+        "message_id": "552f639d-2199-4285-9a7d-82541505bd69",
+        "role": "assistant",
+        "content": "The image shows features highly consistent with **acne** on the face.\n\n**Most likely match: Acne (High confidence)**\nThe skin appears to have a mix of blackheads, red bumps, and some pus-filled spots, which commonly point to acne, especially for your age and location.\n\n**Why this looks like that**\n\n*   You can see multiple dark spots, known as blackheads (open comedones).\n*   There are several red, tender-looking bumps (papules) on the skin.\n*   Some smaller, pus-filled spots (pustules) are also visible.\n*   This pattern is very common for acne in young adults on the face, consistent with your 3-week timeline.\n\n**Other possibilities**\n\n*   A form of **rosacea** (a condition that can also cause redness and bumps).\n*   Folliculitis (inflammation of hair follicles).\n\n**What to do next**\n\n*   Consider seeing a dermatologist or doctor for an accurate diagnosis and to discuss treatment options.\n*   Use gentle cleansers and non-comedogenic products (those that won't clog pores).\n*   Avoid picking or squeezing the spots, as this can worsen them and potentially lead to scars.\n\n**Safety note**\nThis is not a medical diagnosis. A dermatologist or qualified clinician can confirm it.",
+        "timestamp": "2026-05-27T02:07:24.840457+00:00"
+      },
+      {
+        "message_id": "e3a82e19-41f6-4b1e-8342-bae7a5838982",
+        "role": "user",
+        "content": "what can I do to help with this?",
+        "timestamp": "2026-05-27T02:10:06.952744+00:00"
+      },
+      {
+        "message_id": "4ff44bfb-cbea-4d7e-88ae-22f7dba504e7",
+        "role": "assistant",
+        "content": "Simulated error from Gemini: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+        "timestamp": "2026-05-27T02:10:08.877591+00:00"
+      }
+    ],
+    "images": [
+      {
+        "image_id": "b1a4273b-9e67-434a-8770-f9427f1edebe",
+        "image_path": "aknekomedot.jpg",
+        "uploaded_at": "2026-05-27T02:07:24.840457+00:00",
+        "width": 224,
+        "height": 224
+      }
+    ],
+    "prediction_history": [
+      {
+        "prediction_id": "c70258da-f825-4538-ba5f-524e1e7351f6",
+        "image_id": "7a614467-2463-49ec-8c72-a26e6823e8ee",
+        "top_k": [
+          {
+            "label": "acne",
+            "score": 0.8217371106147766
+          },
+          {
+            "label": "rosacea",
+            "score": 0.11368000507354736
+          },
+          {
+            "label": "fungal infection",
+            "score": 0.028008783236145973
+          }
+        ],
+        "confidence": "high"
+      }
+    ],
+    "profile": {
+      "age": "20",
+      "gender": "female",
+      "lesion_area": "face",
+      "timeline": "3 weeks",
+      "allergies": null
+    },
+    "severity_index": 3,
+    "marked_image_url": null
+  },
+  "1cd6c761-7b8a-4dcc-930c-9392910ffac9": {
+    "session_id": "1cd6c761-7b8a-4dcc-930c-9392910ffac9",
+    "created_at": "2026-05-27T04:16:52.296878+00:00",
+    "updated_at": "2026-05-27T04:16:52.296878+00:00",
+    "title": "Acne Analysis",
+    "messages": [
+      {
+        "message_id": "df22f190-29fd-4c3b-a9f5-8241520027fa",
+        "role": "assistant",
+        "content": "{\"primary_match\": \"Error\", \"summary\": \"Simulated error from Gemini: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}\", \"why_this_result\": [], \"other_possibilities\": [], \"recommended_actions\": [], \"safety_note\": \"\", \"severity_index\": 0, \"suggested_follow_ups\": []}",
+        "suggested_follow_ups": [],
+        "timestamp": "2026-05-27T04:16:52.296878+00:00"
+      }
+    ],
+    "images": [
+      {
+        "image_id": "022e0edc-8349-43a1-8607-b9bde3fc6895",
+        "image_path": "aknekomedot.jpg",
+        "uploaded_at": "2026-05-27T04:16:52.296878+00:00",
+        "width": 224,
+        "height": 224
+      }
+    ],
+    "prediction_history": [
+      {
+        "prediction_id": "e90facbd-7980-49ee-b032-5d1040714977",
+        "image_id": "17f49cd3-dd5e-49e0-a646-cc228c448ec3",
+        "top_k": [
+          {
+            "label": "acne",
+            "score": 0.8217371106147766
+          },
+          {
+            "label": "rosacea",
+            "score": 0.11368000507354736
+          },
+          {
+            "label": "fungal infection",
+            "score": 0.028008783236145973
+          }
+        ],
+        "confidence": "high"
+      }
+    ],
+    "profile": {
+      "age": "22",
+      "gender": "female",
+      "lesion_area": "face",
+      "timeline": "4 months",
+      "notes": "pains and sebum"
+    },
+    "severity_index": null,
+    "marked_image_url": null
+  },
+  "cf3091a1-0762-4edd-9ae1-9016ffa5377d": {
+    "session_id": "cf3091a1-0762-4edd-9ae1-9016ffa5377d",
+    "created_at": "2026-05-27T04:53:01.555098+00:00",
+    "updated_at": "2026-05-27T04:53:01.555098+00:00",
+    "title": "Fungal Infection Analysis",
+    "messages": [
+      {
+        "message_id": "4364a5e8-e28c-4d6a-ad1e-e751923f4ece",
+        "role": "assistant",
+        "content": "{\"primary_match\": \"Error\", \"summary\": \"Simulated error from Gemini: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 59.025438748s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '59s'}]}}\", \"why_this_result\": [], \"other_possibilities\": [], \"recommended_actions\": [], \"safety_note\": \"\", \"severity_index\": 0, \"suggested_follow_ups\": []}",
+        "suggested_follow_ups": [],
+        "timestamp": "2026-05-27T04:53:01.555098+00:00"
+      }
+    ],
+    "images": [
+      {
+        "image_id": "0174f124-03df-41a4-a477-7d34e04184d3",
+        "image_path": "camera_capture_1779857562164.jpg",
+        "uploaded_at": "2026-05-27T04:53:01.555098+00:00",
+        "width": 224,
+        "height": 224
+      }
+    ],
+    "prediction_history": [
+      {
+        "prediction_id": "bd8dddab-5f2b-4444-9add-e571371d5f57",
+        "image_id": "326e8d36-d20d-4345-b004-757ee8cd535c",
+        "top_k": [
+          {
+            "label": "fungal infection",
+            "score": 0.4364861249923706
+          },
+          {
+            "label": "vitiligo",
+            "score": 0.20774585008621216
+          },
+          {
+            "label": "acne",
+            "score": 0.09919127076864243
+          }
+        ],
+        "confidence": "medium"
+      }
+    ],
+    "profile": {
+      "age": "22",
+      "gender": "male",
+      "lesion_area": "face",
+      "timeline": "2 weeks",
+      "notes": "redness, dryness, oily skin"
+    },
+    "severity_index": null,
+    "marked_image_url": null
+  },
+  "6bf249ee-fcad-4662-85b0-caa141ac8f2c": {
+    "session_id": "6bf249ee-fcad-4662-85b0-caa141ac8f2c",
+    "created_at": "2026-05-27T13:11:44.088794+00:00",
+    "updated_at": "2026-05-27T13:12:49.792314+00:00",
+    "title": "Vitiligo Analysis",
+    "messages": [
+      {
+        "message_id": "9f2aa940-3da5-4400-bd55-df791c45e51f",
+        "role": "assistant",
+        "content": "{\n  \"primary_match\": \"Vitiligo (High confidence)\",\n  \"summary\": \"The image shows distinct light patches on your stomach, which are consistent with vitiligo.\",\n  \"why_this_result\": [\n    \"You have clearly defined white patches on your stomach, which is a hallmark of vitiligo.\",\n    \"The areas of lighter skin are irregular in shape and vary in size.\",\n    \"Small spots of your original skin color are visible within some of the white patches.\",\n    \"The condition has been present for 7 months and is not painful, which aligns with typical vitiligo symptoms.\"\n  ],\n  \"other_possibilities\": [\n    \"Pityriasis versicolor (a common fungal infection that can cause lighter skin patches)\",\n    \"Post-inflammatory hypopigmentation (lighter skin that occurs after skin injury or inflammation)\"\n  ],\n  \"recommended_actions\": [\n    \"Consult a dermatologist or qualified clinician to confirm the diagnosis and discuss treatment options.\",\n    \"Protect the affected skin from the sun, as these areas are more susceptible to sunburn.\",\n    \"Consider managing stress, as it can sometimes influence skin conditions.\"\n  ],\n  \"safety_note\": \"This is not a medical diagnosis. A dermatologist or qualified clinician can confirm it.\",\n  \"suggested_follow_ups\": [\n    \"What causes vitiligo?\",\n    \"Are there effective treatments for vitiligo?\",\n    \"Will these patches spread to other parts of my body?\",\n    \"How can I best protect my skin with vitiligo?\"\n  ],\n  \"severity_index\": 3\n}",
+        "suggested_follow_ups": [
+          "What causes vitiligo?",
+          "Are there effective treatments for vitiligo?",
+          "Will these patches spread to other parts of my body?",
+          "How can I best protect my skin with vitiligo?"
+        ],
+        "timestamp": "2026-05-27T13:11:44.088794+00:00"
+      },
+      {
+        "message_id": "a98dfb96-10c3-446f-9077-0407797e8366",
+        "role": "user",
+        "content": "Are there effective treatments for vitiligo?",
+        "suggested_follow_ups": null,
+        "timestamp": "2026-05-27T13:12:44.538231+00:00"
+      },
+      {
+        "message_id": "0bc41d99-8f63-4183-9968-c7208335cab7",
+        "role": "assistant",
+        "content": "Yes, there are several treatments for vitiligo, and they often focus on trying to restore your natural skin color or slow down the progression of the condition. It's important to remember that not every treatment works for everyone, and results can vary. Common approaches include: Topical creams: These are often the first line of treatment and are applied directly to the lighter patches of skin. Light therapy: Also known as phototherapy, this involves exposing the affected skin to specific types of UV light under medical supervision. Oral medications: In some cases, your doctor might suggest oral medicines, especially if vitiligo is widespread or rapidly progressing. Remember, a dermatologist can help determine the best treatment plan for you based on the extent of your vitiligo, its location, and your overall health.",
+        "suggested_follow_ups": [
+          "What causes vitiligo?",
+          "Will these patches spread to other parts of my body?",
+          "How can I best protect my skin with vitiligo?",
+          "Is vitiligo curable?"
+        ],
+        "timestamp": "2026-05-27T13:12:49.792314+00:00"
+      }
+    ],
+    "images": [
+      {
+        "image_id": "2f311089-5b67-467a-92db-e1c3da8cda15",
+        "image_path": "temp_test.jpg",
+        "uploaded_at": "2026-05-27T13:11:44.088794+00:00",
+        "width": 224,
+        "height": 224
+      }
+    ],
+    "prediction_history": [
+      {
+        "prediction_id": "4556e669-1a33-444f-ac04-1023b906734e",
+        "image_id": "c63657e8-9f38-4bdd-870e-1d97fb921d0a",
+        "top_k": [
+          {
+            "label": "vitiligo",
+            "score": 0.9146195650100708
+          },
+          {
+            "label": "psoriasis",
+            "score": 0.05116026848554611
+          },
+          {
+            "label": "fungal infection",
+            "score": 0.026093803346157074
+          }
+        ],
+        "confidence": "high"
+      }
+    ],
+    "profile": {
+      "age": "37",
+      "gender": "female",
+      "lesion_area": "stomach",
+      "timeline": "7 months",
+      "notes": "not painful"
+    },
+    "severity_index": 3,
+    "marked_image_url": null
+  },
+  "e354f623-dac7-454f-b63a-28226b159fc0": {
+    "session_id": "e354f623-dac7-454f-b63a-28226b159fc0",
+    "created_at": "2026-05-27T14:10:41.379480+00:00",
+    "updated_at": "2026-05-27T14:10:41.379480+00:00",
+    "title": "Acne Analysis",
+    "messages": [
+      {
+        "message_id": "1a9247f3-f364-447c-b146-1b789436c6a6",
+        "role": "assistant",
+        "content": "{\"primary_match\": \"Acne (High confidence)\", \"summary\": \"The analysis shows multiple small bumps and areas of redness on your face, consistent with a common skin condition.\", \"why_this_result\": [\"Multiple small, red bumps are visible on the cheek area.\", \"Your reported history of uneven texture over 5 years is consistent with acne breakouts.\", \"This condition is common in individuals of your age.\"], \"other_possibilities\": [\"Rosacea, which can also cause redness and bumps.\", \"Folliculitis, an inflammation of hair follicles.\"], \"recommended_actions\": [\"Cleanse your face twice daily with a gentle, non-comedogenic cleanser.\", \"Consider using over-the-counter products containing salicylic acid or benzoyl peroxide.\", \"Avoid picking or squeezing any bumps to prevent irritation or scarring.\", \"If symptoms persist or worsen, consult a dermatologist for personalized advice and treatment options.\"], \"safety_note\": \"This is not a medical diagnosis. A dermatologist or qualified clinician can confirm it.\", \"suggested_follow_ups\": [\"What ingredients should I look for in skincare products?\", \"Can diet affect my skin condition?\", \"How can I prevent future breakouts?\", \"When should I see a doctor?\"], \"severity_index\": 2}",
+        "suggested_follow_ups": [
+          "What ingredients should I look for in skincare products?",
+          "Can diet affect my skin condition?",
+          "How can I prevent future breakouts?",
+          "When should I see a doctor?"
+        ],
+        "timestamp": "2026-05-27T14:10:41.379480+00:00"
+      }
+    ],
+    "images": [
+      {
+        "image_id": "cf6a6ac7-41ca-4ae0-8ee7-825cff8362ad",
+        "image_path": "camera_capture_1779891006534.jpg",
+        "uploaded_at": "2026-05-27T14:10:41.379480+00:00",
+        "width": 224,
+        "height": 224
+      }
+    ],
+    "prediction_history": [
+      {
+        "prediction_id": "d5138e1e-b2be-4790-ab1c-3bb19e245c36",
+        "image_id": "6b4e92b1-0904-41c9-8492-d3bc18537dc8",
+        "top_k": [
+          {
+            "label": "acne",
+            "score": 0.6054195761680603
+          },
+          {
+            "label": "rosacea",
+            "score": 0.1546095460653305
+          },
+          {
+            "label": "vitiligo",
+            "score": 0.09596263617277145
+          }
+        ],
+        "confidence": "high"
+      }
+    ],
+    "profile": {
+      "age": "24",
+      "gender": "male",
+      "lesion_area": "face",
+      "timeline": "5 years",
+      "notes": "uneven texture"
+    },
+    "severity_index": 2,
+    "marked_image_url": null
+  },
+  "0edba149-fc93-470f-bbc4-b5e0013f9546": {
+    "session_id": "0edba149-fc93-470f-bbc4-b5e0013f9546",
+    "created_at": "2026-05-27T14:34:17.411591+00:00",
+    "updated_at": "2026-05-27T14:35:01.325431+00:00",
+    "title": "Acne Analysis",
+    "messages": [
+      {
+        "message_id": "a2816393-cea4-4d0b-8c3a-2bcb2ff79c2e",
+        "role": "assistant",
+        "content": "{\n  \"primary_match\": \"Acne (High confidence)\",\n  \"summary\": \"Based on the image and your history, we observe features commonly associated with acne on your face.\",\n  \"why_this_result\": [\n    \"Presence of numerous blackheads, also known as open comedones.\",\n    \"Multiple red bumps, which can be a sign of inflammation.\",\n    \"Generalized redness in the affected area, consistent with your history.\",\n    \"Your reported history of redness and black spots on the face for two years aligns with typical acne presentation.\"\n  ],\n  \"other_possibilities\": [\n    \"Rosacea, which can also cause redness and bumps.\",\n    \"Folliculitis, an inflammation of hair follicles, though less likely given the prominent blackheads.\"\n  ],\n  \"recommended_actions\": [\n    \"Consult a dermatologist or healthcare provider for a proper diagnosis and personalized treatment plan.\",\n    \"Use a gentle, non-comedogenic cleanser and moisturizer to avoid further clogging pores.\",\n    \"Avoid picking or squeezing lesions, as this can worsen inflammation and potentially lead to scarring.\",\n    \"Consider over-the-counter acne treatments containing ingredients like salicylic acid or benzoyl peroxide, if approved by a professional.\"\n  ],\n  \"safety_note\": \"This is not a medical diagnosis. A dermatologist or qualified clinician can confirm it.\",\n  \"suggested_follow_ups\": [\n    \"What type of acne might this be?\",\n    \"Are there specific products I should avoid?\",\n    \"Could diet be affecting my skin?\",\n    \"When should I see a doctor if it doesn't improve?\"\n  ],\n  \"severity_index\": 3\n}",
+        "suggested_follow_ups": [
+          "What type of acne might this be?",
+          "Are there specific products I should avoid?",
+          "Could diet be affecting my skin?",
+          "When should I see a doctor if it doesn't improve?"
+        ],
+        "timestamp": "2026-05-27T14:34:17.411591+00:00"
+      },
+      {
+        "message_id": "d43f8424-0d6c-4998-9980-ce1d9fbf6ef8",
+        "role": "user",
+        "content": "What type of acne might this be?",
+        "suggested_follow_ups": null,
+        "timestamp": "2026-05-27T14:34:57.466425+00:00"
+      },
+      {
+        "message_id": "903cb8e1-42b7-4301-b1a8-e0d3ef405b9d",
+        "role": "assistant",
+        "content": "Based on the features observed, such as blackheads and red bumps, this suggests you may have a combination of:\n\n*   **Comedonal acne:** Characterized by blackheads (open comedones) and whiteheads (closed comedones).\n*   **Inflammatory acne:** Characterized by red bumps (papules) and sometimes pus-filled pimples (pustules).\n\nThis mix is quite common, and a dermatologist can provide a precise classification and guide you on the best approach.",
+        "suggested_follow_ups": [
+          "How does a dermatologist diagnose acne?",
+          "What are common treatments for this type of acne?",
+          "Can certain skincare ingredients help?",
+          "What are the best ways to prevent new breakouts?"
+        ],
+        "timestamp": "2026-05-27T14:35:01.325431+00:00"
+      }
+    ],
+    "images": [
+      {
+        "image_id": "c205574d-84f7-4cd0-b64f-df935a455967",
+        "image_path": "aknekomedot.jpg",
+        "uploaded_at": "2026-05-27T14:34:17.411591+00:00",
+        "width": 224,
+        "height": 224
+      }
+    ],
+    "prediction_history": [
+      {
+        "prediction_id": "592609cb-0958-400e-9018-c963977adff5",
+        "image_id": "2afabc86-56ee-4970-a50c-4f419ee4e935",
+        "top_k": [
+          {
+            "label": "acne",
+            "score": 0.8217371106147766
+          },
+          {
+            "label": "rosacea",
+            "score": 0.11368000507354736
+          },
+          {
+            "label": "fungal infection",
+            "score": 0.028008783236145973
+          }
+        ],
+        "confidence": "high"
+      }
+    ],
+    "profile": {
+      "age": "22",
+      "gender": "female",
+      "lesion_area": "face",
+      "timeline": "2 years",
+      "notes": "redness, black spots"
+    },
+    "severity_index": 3,
+    "marked_image_url": null
+  },
+  "6ff9b304-0c37-48f0-a02a-54bf63cc82e1": {
+    "session_id": "6ff9b304-0c37-48f0-a02a-54bf63cc82e1",
+    "created_at": "2026-05-27T14:59:04.546311+00:00",
+    "updated_at": "2026-05-27T14:59:04.546311+00:00",
+    "title": "Acne Analysis",
+    "messages": [
+      {
+        "message_id": "9775faf0-16c2-4e31-be7e-ded037f7952e",
+        "role": "assistant",
+        "content": "{\n  \"primary_match\": \"Acne (High confidence)\",\n  \"summary\": \"We observed features on your face, like blackheads and red bumps, that are highly consistent with acne.\",\n  \"why_this_result\": [\n    \"You have visible blackheads (open comedones), which are a common type of acne spot.\",\n    \"There are also some red, inflamed bumps present.\",\n    \"Your history of redness and 'black spots' on the face for two years aligns with acne.\"\n  ],\n  \"other_possibilities\": [\n    \"Rosacea, which can also cause redness and bumps, but typically does not include blackheads.\",\n    \"Fungal folliculitis, a less common condition that can look similar to acne but is caused by yeast.\"\n  ],\n  \"recommended_actions\": [\n    \"Consult a dermatologist or healthcare provider to confirm the diagnosis and discuss the best treatment options for you.\",\n    \"Use gentle, non-comedogenic (won't clog pores) skincare products.\",\n    \"Avoid picking or squeezing the spots, as this can worsen inflammation and lead to scarring.\",\n    \"Consider trying over-the-counter products containing ingredients like salicylic acid or benzoyl peroxide.\"\n  ],\n  \"safety_note\": \"This is not a medical diagnosis. A dermatologist or qualified clinician can confirm it.\",\n  \"suggested_follow_ups\": [\n    \"What type of acne do I have?\",\n    \"What are the best treatment options for acne?\",\n    \"How can I prevent scarring?\",\n    \"Are there any dietary changes that could help?\"\n  ],\n  \"severity_index\": 3\n}",
+        "suggested_follow_ups": [
+          "What type of acne do I have?",
+          "What are the best treatment options for acne?",
+          "How can I prevent scarring?",
+          "Are there any dietary changes that could help?"
+        ],
+        "timestamp": "2026-05-27T14:59:04.546311+00:00"
+      }
+    ],
+    "images": [
+      {
+        "image_id": "415c51a2-40ec-4b10-8daa-f40937fc6240",
+        "image_path": "aknekomedot.jpg",
+        "uploaded_at": "2026-05-27T14:59:04.546311+00:00",
+        "width": 224,
+        "height": 224
+      }
+    ],
+    "prediction_history": [
+      {
+        "prediction_id": "b0cf8908-23e1-40d8-ae33-cee999d6c9aa",
+        "image_id": "59f699bb-44ee-42d5-9e4c-803fb14a2d51",
+        "top_k": [
+          {
+            "label": "acne",
+            "score": 0.8217371106147766
+          },
+          {
+            "label": "rosacea",
+            "score": 0.11368000507354736
+          },
+          {
+            "label": "fungal infection",
+            "score": 0.028008783236145973
+          }
+        ],
+        "confidence": "high"
+      }
+    ],
+    "profile": {
+      "age": "22",
+      "gender": "female",
+      "lesion_area": "face",
+      "timeline": "2 years",
+      "notes": "redness, black spots"
+    },
+    "severity_index": 3,
+    "marked_image_url": "/images/marked_a36decf1-2bb7-49a5-9d12-a53f5d3577a1.jpg"
+  },
+  "0a02dc8e-4fa5-4041-948a-a2cefdb83372": {
+    "session_id": "0a02dc8e-4fa5-4041-948a-a2cefdb83372",
+    "created_at": "2026-05-27T15:05:50.453885+00:00",
+    "updated_at": "2026-05-27T15:05:50.453885+00:00",
+    "title": "Acne Analysis",
+    "messages": [
+      {
+        "message_id": "8529e3e2-0359-4e04-b8ce-db47c8fc290c",
+        "role": "assistant",
+        "content": "{\n  \"primary_match\": \"Acne (High confidence)\",\n  \"summary\": \"Based on the image, the appearance of blackheads and red spots on your face is most consistent with acne.\",\n  \"why_this_result\": [\n    \"The image shows multiple blackheads, which are a common type of acne lesion.\",\n    \"There are also red bumps and inflamed areas visible, which are typical for acne.\",\n    \"Your age (22) and history of symptoms for two years with redness and black spots align with common presentations of acne.\",\n    \"The affected area being the face is a common location for acne.\"\n  ],\n  \"other_possibilities\": [\n    \"Rosacea (less likely given the prominence of blackheads, but can cause redness and bumps)\",\n    \"Folliculitis (an inflammation of hair follicles, which can also cause red bumps, but often lacks blackheads)\"\n  ],\n  \"recommended_actions\": [\n    \"Consult a dermatologist or general practitioner for an accurate diagnosis and to discuss potential treatment options.\",\n    \"Maintain a consistent and gentle skincare routine using non-comedogenic (products that won't clog pores) cleansers and moisturizers.\",\n    \"Avoid picking or squeezing spots, as this can worsen inflammation and lead to scarring.\",\n    \"Consider trying over-the-counter products containing ingredients like salicylic acid or benzoyl peroxide, which can help manage acne.\"\n  ],\n  \"safety_note\": \"This is not a medical diagnosis. A dermatologist or qualified clinician can confirm it.\",\n  \"suggested_follow_ups\": [\n    \"What are the best over-the-counter treatments for this type of acne?\",\n    \"Are there specific skincare ingredients I should look for or avoid?\",\n    \"Could my diet or lifestyle be affecting my skin?\",\n    \"What should I expect during a dermatology consultation for acne?\"\n  ],\n  \"severity_index\": 3\n}",
+        "suggested_follow_ups": [
+          "What are the best over-the-counter treatments for this type of acne?",
+          "Are there specific skincare ingredients I should look for or avoid?",
+          "Could my diet or lifestyle be affecting my skin?",
+          "What should I expect during a dermatology consultation for acne?"
+        ],
+        "timestamp": "2026-05-27T15:05:50.453885+00:00"
+      }
+    ],
+    "images": [
+      {
+        "image_id": "e2025ff4-99e2-4833-91b2-e0fc7c524993",
+        "image_path": "aknekomedot.jpg",
+        "uploaded_at": "2026-05-27T15:05:50.453885+00:00",
+        "width": 224,
+        "height": 224
+      }
+    ],
+    "prediction_history": [
+      {
+        "prediction_id": "baf7f505-5fe8-4c22-b515-23a972556240",
+        "image_id": "e0e48578-443b-4491-b7b2-0a45494d4b2f",
+        "top_k": [
+          {
+            "label": "acne",
+            "score": 0.8217371106147766
+          },
+          {
+            "label": "rosacea",
+            "score": 0.11368000507354736
+          },
+          {
+            "label": "fungal infection",
+            "score": 0.028008783236145973
+          }
+        ],
+        "confidence": "high"
+      }
+    ],
+    "profile": {
+      "age": "22",
+      "gender": "female",
+      "lesion_area": "face",
+      "timeline": "2 years",
+      "notes": "redness, black spots"
+    },
+    "severity_index": 3,
+    "marked_image_url": "/images/marked_e000e270-e0dd-4cb4-acb1-65f28fc296bd.jpg"
+  },
+  "1a9ca0fa-2b0b-4047-b096-c4f15c800b74": {
+    "session_id": "1a9ca0fa-2b0b-4047-b096-c4f15c800b74",
+    "created_at": "2026-05-27T15:06:56.392651+00:00",
+    "updated_at": "2026-05-27T15:06:56.392651+00:00",
+    "title": "Vitiligo Analysis",
+    "messages": [
+      {
+        "message_id": "3ea31f90-819d-4ac4-9b9a-3a3a2713a1c0",
+        "role": "assistant",
+        "content": "{\n  \"primary_match\": \"Vitiligo (High confidence)\",\n  \"summary\": \"The image shows several areas where the skin has lost its natural color, which is consistent with vitiligo.\",\n  \"why_this_result\": [\n    \"You have distinct white patches (depigmentation) on your stomach, a common presentation of vitiligo.\",\n    \"The edges of these patches appear well-defined and irregularly shaped.\",\n    \"The 2-year timeline and your description of 'whitespots' align with the typical development of vitiligo.\"\n  ],\n  \"other_possibilities\": [\n    \"Psoriasis: Less likely as typical redness or scaling is not visible.\",\n    \"Tinea versicolor: This fungal infection can cause lighter spots, but usually with fine flakes or scaling not clearly present.\"\n  ],\n  \"recommended_actions\": [\n    \"Consult a dermatologist for a definitive diagnosis and to discuss your options.\",\n    \"Protect the affected skin from the sun, as these areas are more susceptible to sunburn.\",\n    \"Consider discussing the impact of this condition on your daily life with a healthcare provider.\"\n  ],\n  \"safety_note\": \"This is not a medical diagnosis. A dermatologist or qualified clinician can confirm it.\",\n  \"suggested_follow_ups\": [\n    \"What exactly is vitiligo?\",\n    \"Are there any effective treatments for vitiligo?\",\n    \"Will these white patches spread further?\",\n    \"Is vitiligo linked to any other health conditions?\"\n  ],\n  \"severity_index\": 2\n}",
+        "suggested_follow_ups": [
+          "What exactly is vitiligo?",
+          "Are there any effective treatments for vitiligo?",
+          "Will these white patches spread further?",
+          "Is vitiligo linked to any other health conditions?"
+        ],
+        "timestamp": "2026-05-27T15:06:56.392651+00:00"
+      }
+    ],
+    "images": [
+      {
+        "image_id": "049662e0-8242-482b-87c6-8ee01b2ed229",
+        "image_path": "temp_test.jpg",
+        "uploaded_at": "2026-05-27T15:06:56.392651+00:00",
+        "width": 224,
+        "height": 224
+      }
+    ],
+    "prediction_history": [
+      {
+        "prediction_id": "3406c6f8-bd4f-49f5-93af-0493b2324010",
+        "image_id": "302f5d64-1d7c-4998-9fc4-509f4ede8eec",
+        "top_k": [
+          {
+            "label": "vitiligo",
+            "score": 0.9146195650100708
+          },
+          {
+            "label": "psoriasis",
+            "score": 0.05116026848554611
+          },
+          {
+            "label": "fungal infection",
+            "score": 0.026093803346157074
+          }
+        ],
+        "confidence": "high"
+      }
+    ],
+    "profile": {
+      "age": "38",
+      "gender": "female",
+      "lesion_area": "stomach",
+      "timeline": "2 years",
+      "notes": "whitespots"
+    },
+    "severity_index": 2,
+    "marked_image_url": "/images/marked_fbe96bee-7347-4702-a6b1-0bcdb3075ac3.jpg"
+  },
+  "9507864e-01d4-4e0d-9bce-3aae4bf40975": {
+    "session_id": "9507864e-01d4-4e0d-9bce-3aae4bf40975",
+    "created_at": "2026-05-27T15:18:54.262563+00:00",
+    "updated_at": "2026-05-27T15:18:54.262563+00:00",
+    "title": "Vitiligo Analysis",
+    "messages": [
+      {
+        "message_id": "9c1b1196-a0fd-4855-a979-2ca73c664ba4",
+        "role": "assistant",
+        "content": "{\n  \"primary_match\": \"Vitiligo (High confidence)\",\n  \"summary\": \"Your image shows distinct white patches on your stomach, which strongly suggests vitiligo.\",\n  \"why_this_result\": [\n    \"You have well-defined, milky-white patches of skin that lack pigment.\",\n    \"These patches appear on your stomach, consistent with common areas for vitiligo.\",\n    \"Your history of 'whitespots' over 2 years aligns with the typical progression of this condition.\",\n    \"There are no signs of scaling, redness, or inflammation often seen in other conditions.\"\n  ],\n  \"other_possibilities\": [\n    \"Tinea versicolor (a common fungal infection that can cause light spots)\",\n    \"Post-inflammatory hypopigmentation (skin lightening after injury or inflammation)\"\n  ],\n  \"recommended_actions\": [\n    \"Consult a dermatologist or healthcare provider to confirm the diagnosis and discuss your concerns.\",\n    \"Discuss available treatment options, such as topical creams, light therapy, or camouflage makeup.\",\n    \"Protect the affected areas from sun exposure as depigmented skin is more sensitive to sunburn.\"\n  ],\n  \"safety_note\": \"This is not a medical diagnosis. A dermatologist or qualified clinician can confirm it.\",\n  \"suggested_follow_ups\": [\n    \"What causes vitiligo?\",\n    \"Will these patches spread or get worse?\",\n    \"Are there any home remedies I can try?\",\n    \"What are the long-term implications of vitiligo?\"\n  ],\n  \"severity_index\": 2\n}",
+        "suggested_follow_ups": [
+          "What causes vitiligo?",
+          "Will these patches spread or get worse?",
+          "Are there any home remedies I can try?",
+          "What are the long-term implications of vitiligo?"
+        ],
+        "timestamp": "2026-05-27T15:18:54.262563+00:00"
+      }
+    ],
+    "images": [
+      {
+        "image_id": "d8211ca5-5faa-4390-9bc2-513342430324",
+        "image_path": "temp_test.jpg",
+        "uploaded_at": "2026-05-27T15:18:54.262563+00:00",
+        "width": 224,
+        "height": 224
+      }
+    ],
+    "prediction_history": [
+      {
+        "prediction_id": "0f1b59b0-eae4-4246-935e-c1a4ee7e4df6",
+        "image_id": "dc47eddc-63a0-4039-a1b5-92b7a36dfe66",
+        "top_k": [
+          {
+            "label": "vitiligo",
+            "score": 0.9146195650100708
+          },
+          {
+            "label": "psoriasis",
+            "score": 0.05116026848554611
+          },
+          {
+            "label": "fungal infection",
+            "score": 0.026093803346157074
+          }
+        ],
+        "confidence": "high"
+      }
+    ],
+    "profile": {
+      "age": "38",
+      "gender": "female",
+      "lesion_area": "stomach",
+      "timeline": "2 years",
+      "notes": "whitespots"
+    },
+    "severity_index": 2,
+    "marked_image_url": null
+  }
+}

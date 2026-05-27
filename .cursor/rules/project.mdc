@@ -1,0 +1,20 @@
+# Cursor Project Rules
+
+Always:
+- read AGENTS.md first
+- preserve architecture
+- maintain safety constraints
+- use structured outputs
+- keep inference modular
+
+Never:
+- bypass prompt-bank scoring
+- remove disclaimers
+- hardcode deterministic diagnoses
+- expose raw embeddings
+
+Prefer:
+- small focused commits
+- reusable components
+- typed APIs
+- readable code

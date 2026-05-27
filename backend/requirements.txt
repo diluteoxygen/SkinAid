@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+python-multipart
+torch
+open_clip_torch
+pillow
+safetensors
+google-genai
+python-dotenv
+numpy

@@ -1,0 +1,270 @@
+@import "tailwindcss";
+
+/* ─── Apple-Inspired Design Tokens ─── */
+
+:root {
+  /* Base palette - Light */
+  --background: #f5f5f7;
+  --foreground: #1d1d1f;
+  --surface: #ffffff;
+  --surface-elevated: #ffffff;
+  --surface-secondary: rgba(0, 0, 0, 0.03);
+
+  /* Sidebar */
+  --sidebar-bg: rgba(245, 245, 247, 0.72);
+  --sidebar-border: rgba(0, 0, 0, 0.06);
+  --sidebar-hover: rgba(0, 0, 0, 0.04);
+  --sidebar-active: rgba(0, 122, 255, 0.08);
+  --sidebar-active-text: #0071e3;
+
+  /* Glass */
+  --glass-bg: rgba(255, 255, 255, 0.72);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --glass-shadow: 0 2px 20px rgba(0, 0, 0, 0.04), 0 0 1px rgba(0, 0, 0, 0.08);
+
+  /* Accent */
+  --accent: #0071e3;
+  --accent-hover: #0077ED;
+  --accent-soft: rgba(0, 113, 227, 0.08);
+  --accent-text: #ffffff;
+
+  /* Text */
+  --text-primary: #1d1d1f;
+  --text-secondary: #86868b;
+  --text-tertiary: #aeaeb2;
+
+  /* Borders */
+  --border-primary: rgba(0, 0, 0, 0.08);
+  --border-secondary: rgba(0, 0, 0, 0.04);
+
+  /* Chat bubbles */
+  --bubble-user: #0071e3;
+  --bubble-user-text: #ffffff;
+  --bubble-assistant: #ffffff;
+  --bubble-assistant-border: rgba(0, 0, 0, 0.06);
+  --bubble-assistant-text: #1d1d1f;
+
+  /* Prediction bar */
+  --bar-bg: rgba(0, 0, 0, 0.04);
+  --bar-fill: linear-gradient(90deg, #0071e3, #5ac8fa);
+
+  /* Status colors */
+  --success: #30d158;
+  --warning: #ff9f0a;
+  --danger: #ff3b30;
+}
+
+/* ─── Dark Theme ─── */
+.dark {
+  --background: #000000;
+  --foreground: #f5f5f7;
+  --surface: #1c1c1e;
+  --surface-elevated: #2c2c2e;
+  --surface-secondary: rgba(255, 255, 255, 0.04);
+
+  --sidebar-bg: rgba(28, 28, 30, 0.72);
+  --sidebar-border: rgba(255, 255, 255, 0.06);
+  --sidebar-hover: rgba(255, 255, 255, 0.06);
+  --sidebar-active: rgba(0, 113, 227, 0.15);
+  --sidebar-active-text: #64d2ff;
+
+  --glass-bg: rgba(28, 28, 30, 0.72);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-shadow: 0 2px 20px rgba(0, 0, 0, 0.3), 0 0 1px rgba(255, 255, 255, 0.06);
+
+  --accent: #0a84ff;
+  --accent-hover: #409cff;
+  --accent-soft: rgba(10, 132, 255, 0.12);
+  --accent-text: #ffffff;
+
+  --text-primary: #f5f5f7;
+  --text-secondary: #98989d;
+  --text-tertiary: #636366;
+
+  --border-primary: rgba(255, 255, 255, 0.08);
+  --border-secondary: rgba(255, 255, 255, 0.04);
+
+  --bubble-user: #0a84ff;
+  --bubble-user-text: #ffffff;
+  --bubble-assistant: #1c1c1e;
+  --bubble-assistant-border: rgba(255, 255, 255, 0.08);
+  --bubble-assistant-text: #f5f5f7;
+
+  --bar-bg: rgba(255, 255, 255, 0.06);
+  --bar-fill: linear-gradient(90deg, #0a84ff, #64d2ff);
+
+  --success: #30d158;
+  --warning: #ff9f0a;
+  --danger: #ff453a;
+}
+
+/* ─── Tailwind theme inline overrides ─── */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* ─── Base ─── */
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ─── Scrollbar (Apple-style thin) ─── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-tertiary);
+  border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* ─── Selection ─── */
+::selection {
+  background: var(--accent);
+  color: var(--accent-text);
+}
+
+/* ─── Prose overrides for markdown ─── */
+.prose {
+  --tw-prose-body: var(--text-primary);
+  --tw-prose-headings: var(--text-primary);
+  --tw-prose-links: var(--accent);
+  --tw-prose-bold: var(--text-primary);
+  --tw-prose-code: var(--accent);
+}
+
+/* ─── Glass utility ─── */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
+
+/* ─── Squircle border radius utility ─── */
+.squircle {
+  border-radius: 20px;
+}
+
+.squircle-sm {
+  border-radius: 14px;
+}
+
+.squircle-lg {
+  border-radius: 28px;
+}
+
+.squircle-xl {
+  border-radius: 36px;
+}
+
+/* ─── Floating pill input ─── */
+.pill-input {
+  border-radius: 100px;
+  background: var(--surface);
+  border: 1px solid var(--border-primary);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.04), 0 0 0 1px var(--border-secondary);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.pill-input:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft), 0 1px 6px rgba(0, 0, 0, 0.04);
+}
+
+/* ─── Shimmer loading animation ─── */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--surface-secondary) 25%,
+    var(--border-primary) 50%,
+    var(--surface-secondary) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+/* ─── Subtle fade-in ─── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+/* ─── Prediction bar fill animation ─── */
+@keyframes fillBar {
+  from { width: 0%; }
+}
+
+.animate-fill-bar {
+  animation: fillBar 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* ─── Pulse ring (for the upload icon) ─── */
+@keyframes pulseRing {
+  0% { box-shadow: 0 0 0 0 var(--accent-soft); }
+  70% { box-shadow: 0 0 0 16px rgba(0, 113, 227, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 113, 227, 0); }
+}
+
+.pulse-ring {
+  animation: pulseRing 2s ease-out infinite;
+}
+
+/* ─── Pipeline step connector ─── */
+.pipeline-connector {
+  position: absolute;
+  left: 15px;
+  top: 24px;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(
+    180deg,
+    var(--accent) 0%,
+    #5856d6 50%,
+    transparent 100%
+  );
+  border-radius: 100px;
+}
+
+/* ─── Scanner beam animation ─── */
+@keyframes scannerBeam {
+  0% { top: 0%; opacity: 0.1; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { top: 100%; opacity: 0.1; }
+}
+
+.scanner-beam {
+  animation: scannerBeam 3.5s ease-in-out infinite;
+}
+
