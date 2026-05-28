@@ -23,11 +23,38 @@ const byPrefixAndName = {
 
 /* ────────────────────────────────────────────────────────────────────── */
 
-function StructuredResultCard({ data, prediction, severityIndex, onAskFollowUp }: { data: any, prediction: Prediction, severityIndex: number | null, onAskFollowUp: () => void }) {
+function StructuredResultCard({ data, prediction, severityIndex, onAskFollowUp, imagePreview, metrics }: { data: any, prediction: Prediction, severityIndex: number | null, onAskFollowUp: () => void, imagePreview?: string | null, metrics?: Metrics | null }) {
   const [openSection, setOpenSection] = useState<string | null>("why_this_result");
 
   const toggleSection = (section: string) => {
     setOpenSection(openSection === section ? null : section);
+  };
+
+  const handleDownload = () => {
+    const reportContent = `SkinAid Clinical Report\n=======================\nPrimary Match: ${data.primary_match}\nSummary: ${data.summary}\nSeverity Index: ${severityIndex ?? data.severity_index} / 5\n\nWhy this result:\n${data.why_this_result.map((r: string) => `- ${r}`).join('\n')}\n\nOther possibilities:\n${data.other_possibilities.map((r: string) => `- ${r}`).join('\n')}\n\nRecommended actions:\n${data.recommended_actions.map((r: string) => `- ${r}`).join('\n')}\n\nSafety Note:\n${data.safety_note}`;
+    const blob = new Blob([reportContent], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'skinaid_report.txt';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  };
+
+  const handleShare = async () => {
+    const reportContent = `SkinAid Clinical Report\nPrimary Match: ${data.primary_match}\nSeverity Index: ${severityIndex ?? data.severity_index} / 5\n\nNote: This is not a medical diagnosis.`;
+    if (navigator.share) {
+      try {
+        await navigator.share({ title: 'SkinAid Report', text: reportContent });
+      } catch (err) {
+        console.error('Error sharing:', err);
+      }
+    } else {
+      navigator.clipboard.writeText(reportContent);
+      alert('Report copied to clipboard!');
+    }
   };
 
   return (
@@ -43,19 +70,26 @@ function StructuredResultCard({ data, prediction, severityIndex, onAskFollowUp }
       }}
     >
       {/* Header: Primary Match & Summary */}
-      <div className="px-6 py-6 border-b" style={{ borderColor: 'var(--border-secondary)', background: 'var(--surface-secondary)' }}>
-        <div className="flex items-center gap-2 mb-3">
-          <Activity className="h-4 w-4" style={{ color: 'var(--accent)' }} />
-          <span className="text-[11px] font-semibold uppercase tracking-widest" style={{ color: 'var(--text-secondary)' }}>
-            Primary Match
-          </span>
+      <div className="px-6 py-6 border-b flex flex-col sm:flex-row gap-5 sm:items-start" style={{ borderColor: 'var(--border-secondary)', background: 'var(--surface-secondary)' }}>
+        {imagePreview && (
+          <div className="shrink-0 w-24 h-24 sm:w-32 sm:h-32 rounded-xl overflow-hidden border" style={{ borderColor: 'var(--border-primary)', boxShadow: 'var(--glass-shadow)' }}>
+            <img src={imagePreview} alt="Reference" className="w-full h-full object-cover" />
+          </div>
+        )}
+        <div className="flex-1">
+          <div className="flex items-center gap-2 mb-3">
+            <Activity className="h-4 w-4" style={{ color: 'var(--accent)' }} />
+            <span className="text-[11px] font-semibold uppercase tracking-widest" style={{ color: 'var(--text-secondary)' }}>
+              Primary Match
+            </span>
+          </div>
+          <h2 className="text-[22px] font-bold tracking-tight mb-2" style={{ color: 'var(--accent)' }}>
+            {data.primary_match}
+          </h2>
+          <p className="text-[14px] leading-relaxed" style={{ color: 'var(--text-primary)' }}>
+            {data.summary}
+          </p>
         </div>
-        <h2 className="text-[22px] font-bold tracking-tight mb-2" style={{ color: 'var(--accent)' }}>
-          {data.primary_match}
-        </h2>
-        <p className="text-[14px] leading-relaxed" style={{ color: 'var(--text-primary)' }}>
-          {data.summary}
-        </p>
       </div>
 
       {/* Confidence Bars */}
@@ -180,24 +214,40 @@ function StructuredResultCard({ data, prediction, severityIndex, onAskFollowUp }
 
         {/* Safety note */}
         <div style={{ background: 'color-mix(in srgb, var(--accent) 5%, transparent)' }}>
-          <div className="px-6 py-5 flex items-start gap-3">
-            <Shield className="h-5 w-5 mt-0.5 shrink-0" style={{ color: 'var(--accent)' }} />
+          <div className="px-6 py-4 flex items-start gap-3">
+            <Shield className="h-4 w-4 mt-0.5 shrink-0" style={{ color: 'var(--accent)' }} />
             <div>
-              <span className="font-semibold text-[14px] block mb-1" style={{ color: 'var(--text-primary)' }}>Safety Note</span>
-              <p className="text-[13px] leading-relaxed" style={{ color: 'var(--text-secondary)' }}>{data.safety_note}</p>
+              <span className="font-semibold text-[12px] block mb-1" style={{ color: 'var(--text-primary)' }}>Safety Note</span>
+              <p className="text-[11px] leading-relaxed" style={{ color: 'var(--text-secondary)' }}>{data.safety_note}</p>
             </div>
           </div>
         </div>
       </div>
 
+      {/* Metrics Section */}
+      {metrics && (
+        <div className="px-6 py-3 border-t flex items-center gap-4 text-[11px]" style={{ borderColor: 'var(--border-secondary)', background: 'var(--surface-secondary)', color: 'var(--text-secondary)' }}>
+          <div className="flex items-center gap-1.5">
+            <Activity className="h-3.5 w-3.5" style={{ color: 'var(--accent)' }} />
+            <span>Latency: <span className="font-semibold" style={{ color: 'var(--text-primary)' }}>{metrics.latency_ms.toFixed(0)} ms</span></span>
+          </div>
+          {metrics.memory_mb > 0 && (
+            <div className="flex items-center gap-1.5">
+              <Activity className="h-3.5 w-3.5" style={{ color: 'var(--accent)' }} />
+              <span>Memory: <span className="font-semibold" style={{ color: 'var(--text-primary)' }}>{metrics.memory_mb.toFixed(1)} MB</span></span>
+            </div>
+          )}
+        </div>
+      )}
+
       {/* Sticky Actions Row */}
       <div className="sticky bottom-0 border-t flex items-center justify-between px-4 py-3" style={{ background: 'var(--surface)', borderColor: 'var(--border-secondary)' }}>
         <div className="flex items-center gap-2">
-          <button className="flex items-center gap-2 px-3 py-1.5 rounded-md transition-colors hover:bg-[var(--surface-secondary)] text-[12px] font-medium" style={{ color: 'var(--text-secondary)' }}>
+          <button onClick={handleDownload} className="flex items-center gap-2 px-3 py-1.5 rounded-md transition-colors hover:bg-[var(--surface-secondary)] text-[12px] font-medium" style={{ color: 'var(--text-secondary)' }}>
             <Download className="h-3.5 w-3.5" />
             <span className="hidden sm:inline">Report</span>
           </button>
-          <button className="flex items-center gap-2 px-3 py-1.5 rounded-md transition-colors hover:bg-[var(--surface-secondary)] text-[12px] font-medium" style={{ color: 'var(--text-secondary)' }}>
+          <button onClick={handleShare} className="flex items-center gap-2 px-3 py-1.5 rounded-md transition-colors hover:bg-[var(--surface-secondary)] text-[12px] font-medium" style={{ color: 'var(--text-secondary)' }}>
             <Share2 className="h-3.5 w-3.5" />
             <span className="hidden sm:inline">Share</span>
           </button>
@@ -1147,16 +1197,7 @@ export default function Home() {
             <div className="max-w-3xl mx-auto space-y-6">
 
 
-              {/* Uploaded Reference Image */}
-              {imagePreview && (
-                <motion.div
-                  initial={{ opacity: 0, y: 12 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="flex justify-center mb-6"
-                >
-                  <img src={imagePreview} alt="Reference Image" className="max-w-sm rounded-[18px] border object-cover max-h-64" style={{ borderColor: 'var(--border-primary)', boxShadow: 'var(--glass-shadow)' }} />
-                </motion.div>
-              )}
+              {/* Uploaded Reference Image removed to be included in StructuredResultCard */}
               {/* Structured Result Card handles Prediction data now, rendered as the first message */}
 
               {/* Chat Messages */}
@@ -1184,6 +1225,8 @@ export default function Home() {
                           prediction={prediction}
                           severityIndex={severityIndex}
                           onAskFollowUp={() => chatInputRef.current?.focus()}
+                          imagePreview={imagePreview}
+                          metrics={metrics}
                         />
                       );
                     }
