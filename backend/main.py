@@ -13,7 +13,7 @@ import json
 from supabase import create_client, Client
 
 url = os.environ.get("SUPABASE_URL", "")
-key = os.environ.get("SUPABASE_KEY", "")
+key = os.environ.get("SUPABASE_SERVICE_ROLE_KEY", os.environ.get("SUPABASE_KEY", ""))
 SUPABASE_JWT_SECRET = os.environ.get("SUPABASE_JWT_SECRET", "")
 
 try:
