@@ -23,7 +23,7 @@ const byPrefixAndName = {
 
 /* ────────────────────────────────────────────────────────────────────── */
 
-function StructuredResultCard({ data, prediction, severityIndex, onAskFollowUp, imagePreview, metrics }: { data: any, prediction: Prediction, severityIndex: number | null, onAskFollowUp: () => void, imagePreview?: string | null, metrics?: Metrics | null }) {
+function StructuredResultCard({ data, prediction, severityIndex, onAskFollowUp, imagePreview, profile }: { data: any, prediction: Prediction, severityIndex: number | null, onAskFollowUp: () => void, imagePreview?: string | null, profile?: any }) {
   const [openSection, setOpenSection] = useState<string | null>("why_this_result");
 
   const toggleSection = (section: string) => {
@@ -92,29 +92,28 @@ function StructuredResultCard({ data, prediction, severityIndex, onAskFollowUp, 
         </div>
       </div>
 
-      {/* Confidence Bars */}
+      {/* Patient Context Snapshot */}
+      {profile && (profile.age || profile.gender || profile.lesion_area || profile.timeline) && (
+        <div className="px-6 py-4 border-b flex flex-wrap gap-x-6 gap-y-2 text-[12px]" style={{ borderColor: 'var(--border-secondary)', background: 'var(--surface)' }}>
+          {profile.age && <div><span style={{ color: 'var(--text-tertiary)' }}>Age:</span> <span className="font-medium ml-1" style={{ color: 'var(--text-primary)' }}>{profile.age}</span></div>}
+          {profile.gender && <div><span style={{ color: 'var(--text-tertiary)' }}>Gender:</span> <span className="font-medium ml-1 capitalize" style={{ color: 'var(--text-primary)' }}>{profile.gender}</span></div>}
+          {profile.lesion_area && <div><span style={{ color: 'var(--text-tertiary)' }}>Area:</span> <span className="font-medium ml-1 capitalize" style={{ color: 'var(--text-primary)' }}>{profile.lesion_area}</span></div>}
+          {profile.timeline && <div><span style={{ color: 'var(--text-tertiary)' }}>Timeline:</span> <span className="font-medium ml-1" style={{ color: 'var(--text-primary)' }}>{profile.timeline}</span></div>}
+        </div>
+      )}
+
+      {/* Confidence Distribution Heatmap */}
       <div className="px-6 py-5 border-b" style={{ borderColor: 'var(--border-secondary)' }}>
-        <h3 className="text-[13px] font-semibold mb-4" style={{ color: 'var(--text-primary)' }}>Confidence breakdown</h3>
-        <div className="space-y-3.5">
+        <h3 className="text-[13px] font-semibold mb-4 flex items-center gap-2" style={{ color: 'var(--text-primary)' }}>
+          <Activity className="h-4 w-4" style={{ color: 'var(--accent)' }}/>
+          Confidence Distribution
+        </h3>
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
           {prediction.top_k.map((p, i) => (
-            <div key={i} className="flex justify-between items-center text-[13px]">
-              <span className="capitalize font-medium" style={{ color: 'var(--text-primary)' }}>
-                {p.label.replace(/_/g, ' ')}
-              </span>
-              <div className="flex items-center gap-3">
-                <div className="w-32 h-[6px] rounded-full overflow-hidden" style={{ background: 'var(--bar-bg)' }}>
-                  <motion.div
-                    className="h-full rounded-full"
-                    style={{ background: 'var(--bar-fill)' }}
-                    initial={{ width: 0 }}
-                    animate={{ width: `${p.score * 100}%` }}
-                    transition={{ duration: 0.8, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
-                  />
-                </div>
-                <span className="w-10 text-right tabular-nums font-medium" style={{ color: 'var(--text-secondary)' }}>
-                  {(p.score * 100).toFixed(0)}%
-                </span>
-              </div>
+            <div key={i} className="p-3 rounded-xl border flex flex-col items-center justify-center text-center relative overflow-hidden" style={{ borderColor: 'var(--border-secondary)' }}>
+               <div className="absolute inset-0" style={{ background: 'var(--accent)', opacity: Math.max(0.04, p.score * 0.8) }} />
+               <span className="relative z-10 text-[16px] font-bold" style={{ color: 'var(--text-primary)' }}>{(p.score * 100).toFixed(1)}%</span>
+               <span className="relative z-10 text-[11px] font-medium mt-1 uppercase tracking-wider line-clamp-1" style={{ color: 'var(--text-secondary)' }}>{p.label.replace(/_/g, ' ')}</span>
             </div>
           ))}
 
@@ -224,21 +223,7 @@ function StructuredResultCard({ data, prediction, severityIndex, onAskFollowUp, 
         </div>
       </div>
 
-      {/* Metrics Section */}
-      {metrics && (
-        <div className="px-6 py-3 border-t flex items-center gap-4 text-[11px]" style={{ borderColor: 'var(--border-secondary)', background: 'var(--surface-secondary)', color: 'var(--text-secondary)' }}>
-          <div className="flex items-center gap-1.5">
-            <Activity className="h-3.5 w-3.5" style={{ color: 'var(--accent)' }} />
-            <span>Latency: <span className="font-semibold" style={{ color: 'var(--text-primary)' }}>{metrics.latency_ms.toFixed(0)} ms</span></span>
-          </div>
-          {metrics.memory_mb > 0 && (
-            <div className="flex items-center gap-1.5">
-              <Activity className="h-3.5 w-3.5" style={{ color: 'var(--accent)' }} />
-              <span>Memory: <span className="font-semibold" style={{ color: 'var(--text-primary)' }}>{metrics.memory_mb.toFixed(1)} MB</span></span>
-            </div>
-          )}
-        </div>
-      )}
+
 
       {/* Sticky Actions Row */}
       <div className="sticky bottom-0 border-t flex items-center justify-between px-4 py-3" style={{ background: 'var(--surface)', borderColor: 'var(--border-secondary)' }}>
@@ -774,7 +759,7 @@ export default function Home() {
       {/* ─── Mobile Sheet Sidebar ─── */}
       {isMobile && (
         <Sheet open={sidebarOpen} onOpenChange={setSidebarOpen}>
-          <SidebarContent />
+          {SidebarContent()}
         </Sheet>
       )}
 
@@ -792,7 +777,7 @@ export default function Home() {
           }}
         >
           <div className="w-[260px] h-full flex flex-col">
-            <SidebarContent />
+            {SidebarContent()}
           </div>
         </aside>
       )}
@@ -1226,7 +1211,7 @@ export default function Home() {
                           severityIndex={severityIndex}
                           onAskFollowUp={() => chatInputRef.current?.focus()}
                           imagePreview={imagePreview}
-                          metrics={metrics}
+                          profile={profile}
                         />
                       );
                     }
