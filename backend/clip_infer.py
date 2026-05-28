@@ -1,6 +1,7 @@
 import torch
 import open_clip
 
+from huggingface_hub import hf_hub_download
 from PIL import Image
 from safetensors.torch import load_file
 from prompt_bank import PROMPT_BANK
@@ -14,7 +15,8 @@ model, _, preprocess = open_clip.create_model_and_transforms(
     pretrained=None
 )
 
-model_path = os.path.join(os.path.dirname(__file__), "..", "models", "open_clip_model_fp16.safetensors")
+# Download the model from Hugging Face Hub
+model_path = hf_hub_download(repo_id="doxes/derm1m-fp16", filename="open_clip_model_fp16.safetensors")
 state_dict = load_file(model_path)
 
 model.load_state_dict(state_dict)

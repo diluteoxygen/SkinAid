@@ -14,3 +14,4 @@ python-dotenv
 numpy
 pytest
 httpx
+huggingface_hub
