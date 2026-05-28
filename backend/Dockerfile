@@ -26,8 +26,6 @@ RUN pip install --no-cache-dir --upgrade pip && \
 
 # Copy backend source files
 COPY backend /app/backend
-# Copy models directory to ensure the model weights are included inside the image
-COPY models /app/models
 
 # Expose port
 EXPOSE 8000
