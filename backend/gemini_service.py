@@ -17,8 +17,6 @@ with open(sys_prompt_path, "r", encoding="utf-8") as f:
 
 import re
 from schemas import ProfileMetadata, GeminiStructuredAnalysis, GeminiStructuredChat
-from PIL import ImageDraw
-
 def generate_response(predictions, image_path: str, profile: ProfileMetadata = None):
     profile_text = ""
     if profile:
@@ -66,73 +64,7 @@ Analyze the provided image alongside the CLIP model predictions and generate the
 
     return text, severity
 
-def generate_lesion_markup(image_path: str, session_id: str) -> str:
-    image = Image.open(image_path)
-    
-    # 1. Attempt to use Gemini Image Model (Nano Banana) to mark the image directly
-    try:
-        image_prompt = (
-            "Identify the primary skin lesion or affected area in this image. "
-            "Draw a clean, solid red circle directly around the lesion's perimeter to highlight it. "
-            "Ensure the red circle is thin and precise, wrapping around the lesion without covering or obscuring the lesion itself, "
-            "and keep all other parts of the image unchanged."
-        )
-        print("Attempting direct image marking with gemini-2.5-flash-image (Nano Banana)...")
-        response = client.models.generate_content(
-            model="gemini-2.5-flash-image",
-            contents=[image_prompt, image],
-            config={
-                "response_modalities": ["IMAGE"]
-            }
-        )
-        
-        if response.candidates and response.candidates[0].content.parts:
-            for part in response.candidates[0].content.parts:
-                pil_image = part.as_image()
-                if pil_image:
-                    marked_path = f"marked_{session_id}.jpg"
-                    if pil_image.mode in ("RGBA", "P"):
-                        pil_image = pil_image.convert("RGB")
-                    pil_image.save(marked_path)
-                    print("Successfully generated direct markup using gemini-2.5-flash-image!")
-                    return marked_path
-    except Exception as e:
-        print("Direct image marking failed (likely due to API billing/quota restrictions). Error:", e)
-        print("Falling back to Pillow-based bounding box drawing...")
-        pass
 
-    # 2. Fallback to coordinate-based Pillow drawing
-    try:
-        box_prompt = "Return a bounding box [ymin, xmin, ymax, xmax] around the primary skin lesion or affected area in this image."
-        response = client.models.generate_content(
-            model="gemini-2.5-flash",
-            contents=[box_prompt, image]
-        )
-        match = re.search(r'\[\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*\]', response.text)
-        if match:
-            ymin, xmin, ymax, xmax = map(int, match.groups())
-            width, height = image.size
-            # Convert 0-1000 scale to pixel coordinates
-            left = (xmin / 1000) * width
-            top = (ymin / 1000) * height
-            right = (xmax / 1000) * width
-            bottom = (ymax / 1000) * height
-            
-            draw = ImageDraw.Draw(image)
-            draw.ellipse([left, top, right, bottom], outline="red", width=5)
-            
-            marked_path = f"marked_{session_id}.jpg"
-            if image.mode in ("RGBA", "P"):
-                image = image.convert("RGB")
-            image.save(marked_path)
-            return marked_path
-    except Exception as e:
-        print("Error generating markup via coordinate fallback:", e)
-        pass
-    
-    return None
-    
-    return None
 
 def generate_chat_response(history_text: str, new_message: str):
     prompt = f"""{SYSTEM_PROMPT}

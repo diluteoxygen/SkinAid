@@ -354,11 +354,20 @@ export default function Home() {
         setWikiData(null);
       }
       setSeverityIndex(data.severity_index || null);
-      setMarkedImageUrl(data.marked_image_url || null);
 
       setMetrics(null);
       setSelectedImage(null);
-      setImagePreview(null);
+      if (data.images && data.images.length > 0) {
+        const imgObj = data.images[0] as any;
+        if (imgObj.image_path) {
+          const url = imgObj.image_path.startsWith('http') ? imgObj.image_path : `${BACKEND_URL}${imgObj.image_path}`;
+          setImagePreview(url);
+        } else {
+          setImagePreview(null);
+        }
+      } else {
+        setImagePreview(null);
+      }
       stopCamera();
 
       // Close mobile sidebar after selection
@@ -1138,14 +1147,14 @@ export default function Home() {
             <div className="max-w-3xl mx-auto space-y-6">
 
 
-              {/* Marked Image */}
-              {markedImageUrl && (
+              {/* Uploaded Reference Image */}
+              {imagePreview && (
                 <motion.div
                   initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
                   className="flex justify-center mb-6"
                 >
-                  <img src={`${BACKEND_URL}${markedImageUrl}`} alt="Marked Lesion" className="max-w-sm rounded-[18px] border" style={{ borderColor: 'var(--border-primary)', boxShadow: 'var(--glass-shadow)' }} />
+                  <img src={imagePreview} alt="Reference Image" className="max-w-sm rounded-[18px] border object-cover max-h-64" style={{ borderColor: 'var(--border-primary)', boxShadow: 'var(--glass-shadow)' }} />
                 </motion.div>
               )}
               {/* Structured Result Card handles Prediction data now, rendered as the first message */}

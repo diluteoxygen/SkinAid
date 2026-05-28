@@ -101,7 +101,7 @@ async def verify_token(authorization: str = Header(...)):
     raise HTTPException(status_code=401, detail="Invalid token signature or signing key not found")
 
 from clip_infer import analyze_image
-from gemini_service import generate_response, generate_chat_response, generate_lesion_markup
+from gemini_service import generate_response, generate_chat_response
 from schemas import ProfileMetadata
 import session_store
 
@@ -187,23 +187,14 @@ async def analyze(
             gemini_response = f'{{"primary_match": "Error", "summary": "Simulated error from Gemini: {str(e)}", "why_this_result": [], "other_possibilities": [], "recommended_actions": [], "safety_note": "", "severity_index": 0, "suggested_follow_ups": []}}'
             severity = None
             
-        marked_image_path = generate_lesion_markup(file_path, marked_id)
-        
         # Upload images to Supabase if configured
         final_image_url = None
-        marked_image_url = None
         if supabase:
             with open(file_path, "rb") as f:
                 supabase.storage.from_("images").upload(f"{marked_id}_orig.jpg", f)
             final_image_url = supabase.storage.from_("images").get_public_url(f"{marked_id}_orig.jpg")
-            
-            if marked_image_path:
-                with open(marked_image_path, "rb") as f:
-                    supabase.storage.from_("images").upload(f"{marked_id}_marked.jpg", f)
-                marked_image_url = supabase.storage.from_("images").get_public_url(f"{marked_id}_marked.jpg")
         else:
             final_image_url = f"/images/{file_path}"
-            marked_image_url = f"/images/{marked_image_path}" if marked_image_path else None
 
         # Try to extract suggested_follow_ups from the JSON to store it at the message level
         suggested_follow_ups = None
@@ -220,7 +211,6 @@ async def analyze(
             gemini_response,
             profile=profile.dict(),
             severity_index=severity,
-            marked_image_url=marked_image_url,
             suggested_follow_ups=suggested_follow_ups
         )
 
@@ -230,7 +220,7 @@ async def analyze(
             "gemini_response": gemini_response,
             "metrics": metrics,
             "severity_index": severity,
-            "marked_image_url": marked_image_url
+            "image_url": final_image_url
         }
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
@@ -240,11 +230,6 @@ async def analyze(
             if os.path.exists(file_path):
                 try:
                     os.remove(file_path)
-                except Exception:
-                    pass
-            if marked_image_path and os.path.exists(marked_image_path):
-                try:
-                    os.remove(marked_image_path)
                 except Exception:
                     pass
 
