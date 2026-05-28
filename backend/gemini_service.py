@@ -42,7 +42,7 @@ Analyze the provided image alongside the CLIP model predictions and generate the
     image = Image.open(image_path)
 
     response = client.models.generate_content(
-        model="gemini-2.5-flash",
+        model="gemini-3.1-flash-lite",
         contents=[prompt, image],
         config={
             "response_mime_type": "application/json",
@@ -81,7 +81,7 @@ Maintain the persona defined in your instructions. Respond naturally to the user
     """
     
     response = client.models.generate_content(
-        model="gemini-2.5-flash",
+        model="gemini-3.1-flash-lite",
         contents=prompt,
         config={
             "response_mime_type": "application/json",
