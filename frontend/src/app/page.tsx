@@ -8,7 +8,7 @@ import { useTheme } from "next-themes";
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase";
 
-import { api, Prediction, ChatMessage, SessionDetailResponse, SessionListResponse, Metrics } from "@/lib/api";
+import { api, BACKEND_URL, Prediction, ChatMessage, SessionDetailResponse, SessionListResponse, Metrics } from "@/lib/api";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Sheet } from "@/components/ui/sheet";
@@ -1145,7 +1145,7 @@ export default function Home() {
                   animate={{ opacity: 1, y: 0 }}
                   className="flex justify-center mb-6"
                 >
-                  <img src={`http://localhost:8000${markedImageUrl}`} alt="Marked Lesion" className="max-w-sm rounded-[18px] border" style={{ borderColor: 'var(--border-primary)', boxShadow: 'var(--glass-shadow)' }} />
+                  <img src={`${BACKEND_URL}${markedImageUrl}`} alt="Marked Lesion" className="max-w-sm rounded-[18px] border" style={{ borderColor: 'var(--border-primary)', boxShadow: 'var(--glass-shadow)' }} />
                 </motion.div>
               )}
               {/* Structured Result Card handles Prediction data now, rendered as the first message */}

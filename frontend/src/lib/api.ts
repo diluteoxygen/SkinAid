@@ -1,6 +1,7 @@
 import { createClient } from "./supabase";
 
-const BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000/api";
+export const BACKEND_URL = process.env.NEXT_PUBLIC_API_URL ? process.env.NEXT_PUBLIC_API_URL.replace('/api', '') : "https://doxes-skinaid.hf.space";
+const BASE_URL = `${BACKEND_URL}/api`;
 
 const getAuthHeaders = async (): Promise<Record<string, string>> => {
   const supabase = createClient();
