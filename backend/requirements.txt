@@ -6,5 +6,11 @@ open_clip_torch
 pillow
 safetensors
 google-genai
+supabase
+python-jose
+python-multipart
+pydantic-settings
 python-dotenv
 numpy
+pytest
+httpx

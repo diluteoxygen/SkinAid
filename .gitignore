@@ -22,3 +22,7 @@ htmlcov/
 .ipynb_checkpoints/
 .env
 .env.*
+
+# Backend test artifacts
+/backend/test_*.py
+/backend/tests/

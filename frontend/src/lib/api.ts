@@ -1,5 +1,12 @@
+import { createClient } from "./supabase";
+
 const BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000/api";
 
+const getAuthHeaders = async (): Promise<Record<string, string>> => {
+  const supabase = createClient();
+  const { data: { session } } = await supabase.auth.getSession();
+  return session ? { Authorization: `Bearer ${session.access_token}` } : {};
+};
 export interface PredictionDetail {
   label: string;
   score: number;
@@ -73,6 +80,7 @@ export const api = {
 
     const res = await fetch(`${BASE_URL}/analyze`, {
       method: "POST",
+      headers: await getAuthHeaders(),
       body: formData,
     });
 
@@ -87,7 +95,7 @@ export const api = {
   chat: async (session_id: string, message: string): Promise<ChatResponse> => {
     const res = await fetch(`${BASE_URL}/chat`, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json", ...(await getAuthHeaders()) },
       body: JSON.stringify({ session_id, message }),
     });
 
@@ -100,7 +108,9 @@ export const api = {
   },
 
   getSessions: async (): Promise<SessionListResponse[]> => {
-    const res = await fetch(`${BASE_URL}/sessions`);
+    const res = await fetch(`${BASE_URL}/sessions`, {
+      headers: await getAuthHeaders(),
+    });
     if (!res.ok) {
       throw new Error("Failed to fetch sessions");
     }
@@ -108,7 +118,9 @@ export const api = {
   },
 
   getSession: async (id: string): Promise<SessionDetailResponse> => {
-    const res = await fetch(`${BASE_URL}/sessions/${id}`);
+    const res = await fetch(`${BASE_URL}/sessions/${id}`, {
+      headers: await getAuthHeaders(),
+    });
     if (!res.ok) {
       throw new Error("Failed to fetch session details");
     }
@@ -117,7 +129,8 @@ export const api = {
 
   deleteSession: async (id: string): Promise<{status: string}> => {
     const res = await fetch(`${BASE_URL}/sessions/${id}`, {
-      method: "DELETE"
+      method: "DELETE",
+      headers: await getAuthHeaders(),
     });
     if (!res.ok) {
       throw new Error("Failed to delete session");

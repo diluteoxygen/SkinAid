@@ -1,0 +1,20 @@
+.git
+.github
+.gemini
+.gitignore
+LICENSE
+readme.md
+
+# Virtual environments
+backend/venv/
+backend/__pycache__/
+backend/**/*.pyc
+backend/sessions.json
+backend/temp_*
+backend/marked_*
+
+# Frontend build files
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/.env.local

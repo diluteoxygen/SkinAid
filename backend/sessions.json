@@ -1168,5 +1168,339 @@
     },
     "severity_index": 2,
     "marked_image_url": null
+  },
+  "702ede9d-38e0-41f1-a00b-33be43c0ca9e": {
+    "session_id": "702ede9d-38e0-41f1-a00b-33be43c0ca9e",
+    "created_at": "2026-05-28T06:22:45.794162+00:00",
+    "updated_at": "2026-05-28T06:42:14.022371+00:00",
+    "title": "Acne Analysis",
+    "messages": [
+      {
+        "message_id": "1165f96f-a66d-45b3-ad9a-fc415fa473f0",
+        "role": "assistant",
+        "content": "{\n  \"primary_match\": \"Acne (High confidence)\",\n  \"summary\": \"Your skin shows common signs consistent with acne, including blackheads and some redness, which aligns with your report of oily skin.\",\n  \"why_this_result\": [\n    \"Presence of numerous blackheads (open comedones).\",\n    \"Visible red bumps, which can be part of an acne breakout.\",\n    \"Your reported symptoms of redness and oily skin on the face, a common presentation for acne.\",\n    \"The appearance on the face, a frequent area for acne.\"\n  ],\n  \"other_possibilities\": [\n    \"Rosacea (less likely given the prominent blackheads, but can cause redness and bumps).\",\n    \"Fungal folliculitis (a less common possibility, which can sometimes present with red bumps).\"\n  ],\n  \"recommended_actions\": [\n    \"Cleanse your face gently twice daily with a mild, non-comedogenic cleanser.\",\n    \"Look for over-the-counter products containing ingredients like salicylic acid or benzoyl peroxide to help manage breakouts.\",\n    \"Use skincare and makeup products labeled as 'non-comedogenic' to avoid clogging pores.\",\n    \"If your condition persists or worsens, consider consulting a dermatologist for personalized advice and treatment options.\"\n  ],\n  \"safety_note\": \"This is not a medical diagnosis. A dermatologist or qualified clinician can confirm it.\",\n  \"suggested_follow_ups\": [\n    \"What type of acne is this?\",\n    \"What ingredients should I look for in skincare products for acne?\",\n    \"When should I consider seeing a doctor?\",\n    \"How can I prevent future breakouts?\"\n  ],\n  \"severity_index\": 3\n}",
+        "suggested_follow_ups": [
+          "What type of acne is this?",
+          "What ingredients should I look for in skincare products for acne?",
+          "When should I consider seeing a doctor?",
+          "How can I prevent future breakouts?"
+        ],
+        "timestamp": "2026-05-28T06:22:45.794162+00:00"
+      },
+      {
+        "message_id": "2831dd28-764d-4be9-a817-8a2e46e6baea",
+        "role": "user",
+        "content": "What type of acne is this?",
+        "suggested_follow_ups": null,
+        "timestamp": "2026-05-28T06:42:07.845426+00:00"
+      },
+      {
+        "message_id": "7cbacb63-5909-4288-a8d5-eea48f357054",
+        "role": "assistant",
+        "content": "Based on the observations, your skin appears to have a mix of acne types. The blackheads suggest comedonal acne, which happens when pores get clogged with oil and dead skin cells. The red bumps also point to some inflammatory acne, which occurs when these clogged pores become irritated or infected. Both are very common forms of acne.",
+        "suggested_follow_ups": [
+          "How can I treat these specific types of acne?",
+          "What's the difference between blackheads and whiteheads?",
+          "Are there specific products for inflammatory acne?",
+          "Can diet affect my acne?"
+        ],
+        "timestamp": "2026-05-28T06:42:14.022371+00:00"
+      }
+    ],
+    "images": [
+      {
+        "image_id": "339a1d26-776e-4ab4-874b-6c97bbc58bf9",
+        "image_path": "aknekomedot.jpg",
+        "uploaded_at": "2026-05-28T06:22:45.794162+00:00",
+        "width": 224,
+        "height": 224
+      }
+    ],
+    "prediction_history": [
+      {
+        "prediction_id": "c35ff17a-2c64-41f5-b5ec-bcbe4dc96e42",
+        "image_id": "04bbb060-499e-43c1-a176-23172d5b5c0e",
+        "top_k": [
+          {
+            "label": "acne",
+            "score": 0.8217371106147766
+          },
+          {
+            "label": "rosacea",
+            "score": 0.11368000507354736
+          },
+          {
+            "label": "fungal infection",
+            "score": 0.028008783236145973
+          }
+        ],
+        "confidence": "high"
+      }
+    ],
+    "profile": {
+      "age": "23",
+      "gender": "female",
+      "lesion_area": "face",
+      "timeline": "2 weeks",
+      "notes": "redness and oily skin"
+    },
+    "severity_index": 3,
+    "marked_image_url": null
+  },
+  "711147b8-3fff-4859-bf0a-45602ddee537": {
+    "session_id": "711147b8-3fff-4859-bf0a-45602ddee537",
+    "created_at": "2026-05-28T06:46:23.652965+00:00",
+    "updated_at": "2026-05-28T06:46:23.652965+00:00",
+    "title": "Fungal Infection Analysis",
+    "messages": [
+      {
+        "message_id": "2eb92b50-9701-4809-8824-b7b3d5b7af01",
+        "role": "assistant",
+        "content": "{\"primary_match\": \"Error\", \"summary\": \"Simulated error from Gemini: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 37.612040075s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '37s'}]}}\", \"why_this_result\": [], \"other_possibilities\": [], \"recommended_actions\": [], \"safety_note\": \"\", \"severity_index\": 0, \"suggested_follow_ups\": []}",
+        "suggested_follow_ups": [],
+        "timestamp": "2026-05-28T06:46:23.652965+00:00"
+      }
+    ],
+    "images": [
+      {
+        "image_id": "131e1418-fe43-4f9f-84f4-aaaf3ee77446",
+        "image_path": "camera_capture_1779950744821.jpg",
+        "uploaded_at": "2026-05-28T06:46:23.652965+00:00",
+        "width": 224,
+        "height": 224
+      }
+    ],
+    "prediction_history": [
+      {
+        "prediction_id": "b7210205-fdbf-43a6-ac52-2bfa106b99ee",
+        "image_id": "086046de-0026-4642-8774-b2d0f206ab61",
+        "top_k": [
+          {
+            "label": "fungal infection",
+            "score": 0.6559675931930542
+          },
+          {
+            "label": "psoriasis",
+            "score": 0.10392602533102036
+          },
+          {
+            "label": "vitiligo",
+            "score": 0.09953700006008148
+          }
+        ],
+        "confidence": "high"
+      }
+    ],
+    "profile": {
+      "age": "23",
+      "gender": "male",
+      "lesion_area": "face",
+      "timeline": "2 week",
+      "notes": null
+    },
+    "severity_index": null,
+    "marked_image_url": null
+  },
+  "a9fa24a6-444c-4b69-a8f8-5b29e13d7c58": {
+    "session_id": "a9fa24a6-444c-4b69-a8f8-5b29e13d7c58",
+    "created_at": "2026-05-28T07:29:28.322901+00:00",
+    "updated_at": "2026-05-28T07:30:05.399964+00:00",
+    "title": "Acne Analysis",
+    "messages": [
+      {
+        "message_id": "1280f7e3-bb52-4501-9ad7-e4789c1a1e60",
+        "role": "assistant",
+        "content": "{\n  \"primary_match\": \"Acne (High confidence)\",\n  \"summary\": \"It looks like you have some common features often seen with acne on your face.\",\n  \"why_this_result\": [\n    \"You have noticeable blackheads (small black spots) and red bumps on your skin.\",\n    \"The redness in the affected area is consistent with your description.\",\n    \"Acne is very common among individuals in your age group and often appears on the face.\",\n    \"The 2-week timeline for redness aligns with acne development.\"\n  ],\n  \"other_possibilities\": [\n    \"Rosacea (less likely due to the presence of blackheads)\",\n    \"Perioral dermatitis (if lesions were primarily around the mouth and nose)\"\n  ],\n  \"recommended_actions\": [\n    \"Cleanse your face twice daily with a gentle, non-comedogenic cleanser.\",\n    \"Consider trying over-the-counter products containing salicylic acid or benzoyl peroxide.\",\n    \"Avoid picking or squeezing the bumps, as this can worsen inflammation and lead to scarring.\",\n    \"If your acne persists or worsens after a few weeks, consider consulting a dermatologist.\"\n  ],\n  \"safety_note\": \"This is not a medical diagnosis. A dermatologist or qualified clinician can confirm it.\",\n  \"suggested_follow_ups\": [\n    \"What kind of skincare products are best for acne?\",\n    \"How can I prevent future breakouts?\",\n    \"When should I see a doctor for my skin?\",\n    \"Could my diet be affecting my skin?\"\n  ],\n  \"severity_index\": 3\n}",
+        "suggested_follow_ups": [
+          "What kind of skincare products are best for acne?",
+          "How can I prevent future breakouts?",
+          "When should I see a doctor for my skin?",
+          "Could my diet be affecting my skin?"
+        ],
+        "timestamp": "2026-05-28T07:29:28.322901+00:00"
+      },
+      {
+        "message_id": "60fb2330-69b8-42e2-a374-2999af90e288",
+        "role": "user",
+        "content": "What kind of skincare products are best for acne?",
+        "suggested_follow_ups": null,
+        "timestamp": "2026-05-28T07:29:57.846692+00:00"
+      },
+      {
+        "message_id": "c9b9d4fe-4605-4d2f-9935-17b43b95ddf9",
+        "role": "assistant",
+        "content": "For managing acne, selecting the right skincare products is key. Look for items labeled as \"non-comedogenic,\" meaning they are less likely to clog your pores. Here are some product types often recommended:\n\n*   **Gentle Cleanser:** Start with a mild cleanser twice a day to remove dirt and excess oil without stripping your skin.\n*   **Topical Treatments:** Products containing ingredients like salicylic acid or benzoyl peroxide can be very helpful. Salicylic acid helps exfoliate and unclog pores, while benzoyl peroxide targets acne-causing bacteria.\n*   **Lightweight Moisturizer:** Even oily or acne-prone skin needs moisture. Choose a light, oil-free, non-comedogenic moisturizer to keep your skin hydrated and support its barrier.\n*   **Sunscreen:** If you use acne treatments, your skin might become more sensitive to the sun. Always apply a broad-spectrum, non-comedogenic sunscreen during the day.",
+        "suggested_follow_ups": [
+          "How should I incorporate these products into my daily routine?",
+          "Are there any ingredients I should avoid with acne?",
+          "What if over-the-counter products don't work?",
+          "Can certain foods trigger acne?"
+        ],
+        "timestamp": "2026-05-28T07:30:05.399964+00:00"
+      }
+    ],
+    "images": [
+      {
+        "image_id": "53a521fd-bfb9-4df2-8b5e-7cb00a4ed681",
+        "image_path": "aknekomedot.jpg",
+        "uploaded_at": "2026-05-28T07:29:28.322901+00:00",
+        "width": 224,
+        "height": 224
+      }
+    ],
+    "prediction_history": [
+      {
+        "prediction_id": "e2a2e4a5-070e-4820-843f-0d89ce8e32ba",
+        "image_id": "92cb76ee-ced9-44ad-8f90-91d860d550c5",
+        "top_k": [
+          {
+            "label": "acne",
+            "score": 0.8217371106147766
+          },
+          {
+            "label": "rosacea",
+            "score": 0.11368000507354736
+          },
+          {
+            "label": "fungal infection",
+            "score": 0.028008783236145973
+          }
+        ],
+        "confidence": "high"
+      }
+    ],
+    "profile": {
+      "age": "23",
+      "gender": "female",
+      "lesion_area": "face",
+      "timeline": "2 week",
+      "notes": "redness"
+    },
+    "severity_index": 3,
+    "marked_image_url": null
+  },
+  "0c428af9-4629-4e8c-b282-0476e2efd513": {
+    "session_id": "0c428af9-4629-4e8c-b282-0476e2efd513",
+    "created_at": "2026-05-28T07:56:34.632803+00:00",
+    "updated_at": "2026-05-28T07:56:34.632803+00:00",
+    "title": "Acne Analysis",
+    "messages": [
+      {
+        "message_id": "e3fb6c72-809a-46ed-98d7-40031bc2207a",
+        "role": "assistant",
+        "content": "{\n  \"primary_match\": \"Acne (High confidence)\",\n  \"summary\": \"The skin on your face shows signs consistent with acne, including blackheads and some red bumps.\",\n  \"why_this_result\": [\n    \"Presence of numerous blackheads, also known as open comedones.\",\n    \"Red bumps and some inflamed areas are visible.\",\n    \"The condition is located on the face, a common area for acne in young adults.\",\n    \"Reported redness and 2-week timeline align with typical acne presentation.\"\n  ],\n  \"other_possibilities\": [\n    \"Rosacea: This can cause redness and bumps, but typically lacks blackheads.\",\n    \"Folliculitis: Inflammation of hair follicles, which might look similar to some acne bumps.\"\n  ],\n  \"recommended_actions\": [\n    \"Gently cleanse your face twice daily with a mild, non-comedogenic cleanser.\",\n    \"Consider using over-the-counter acne treatments containing ingredients like salicylic acid or benzoyl peroxide.\",\n    \"Avoid picking or squeezing blemishes, as this can worsen inflammation and lead to scarring.\",\n    \"If over-the-counter remedies don't help, or if your acne is painful or severe, consult a dermatologist.\"\n  ],\n  \"safety_note\": \"This is not a medical diagnosis. A dermatologist or qualified clinician can confirm it.\",\n  \"suggested_follow_ups\": [\n    \"What type of acne is this?\",\n    \"What are the best cleansers for acne-prone skin?\",\n    \"How can I prevent future breakouts?\",\n    \"When should I see a doctor for my acne?\"\n  ],\n  \"severity_index\": 3\n}",
+        "suggested_follow_ups": [
+          "What type of acne is this?",
+          "What are the best cleansers for acne-prone skin?",
+          "How can I prevent future breakouts?",
+          "When should I see a doctor for my acne?"
+        ],
+        "timestamp": "2026-05-28T07:56:34.632803+00:00"
+      }
+    ],
+    "images": [
+      {
+        "image_id": "c8b356bb-3ac1-415a-802a-8341e9354f0e",
+        "image_path": "aknekomedot.jpg",
+        "uploaded_at": "2026-05-28T07:56:34.632803+00:00",
+        "width": 224,
+        "height": 224
+      }
+    ],
+    "prediction_history": [
+      {
+        "prediction_id": "0ac3451a-9ae7-4822-bf1b-559f35aab555",
+        "image_id": "3f447752-ebdb-455b-aa50-fcbe1f8b1175",
+        "top_k": [
+          {
+            "label": "acne",
+            "score": 0.8217371106147766
+          },
+          {
+            "label": "rosacea",
+            "score": 0.11368000507354736
+          },
+          {
+            "label": "fungal infection",
+            "score": 0.028008783236145973
+          }
+        ],
+        "confidence": "high"
+      }
+    ],
+    "profile": {
+      "age": "23",
+      "gender": "female",
+      "lesion_area": "face",
+      "timeline": "2 week",
+      "notes": "redness"
+    },
+    "severity_index": 3,
+    "marked_image_url": null
+  },
+  "4e2a13a4-a48b-4534-b404-4b673f796976": {
+    "session_id": "4e2a13a4-a48b-4534-b404-4b673f796976",
+    "created_at": "2026-05-28T08:39:28.078618+00:00",
+    "updated_at": "2026-05-28T08:39:28.078618+00:00",
+    "title": "Acne Analysis",
+    "messages": [
+      {
+        "message_id": "f732a141-465e-4d29-af7d-767ffdb91659",
+        "role": "user",
+        "content": "Uploaded an image for analysis.",
+        "timestamp": "2026-05-28T08:39:28.078618+00:00"
+      },
+      {
+        "message_id": "b799268c-8f1c-42c4-81dc-cdecf695d8d6",
+        "role": "assistant",
+        "content": "{\n  \"primary_match\": \"Acne (High confidence)\",\n  \"summary\": \"We observed several blackheads and red bumps on your skin, which are common signs of acne.\",\n  \"why_this_result\": [\n    \"Presence of numerous blackheads (also called open comedones) on the skin.\",\n    \"Multiple red bumps and inflamed spots visible.\",\n    \"Overall skin texture appears somewhat uneven, consistent with acne-prone skin.\"\n  ],\n  \"other_possibilities\": [\n    \"Rosacea\",\n    \"Folliculitis\"\n  ],\n  \"recommended_actions\": [\n    \"Keep the affected area clean by washing gently twice daily with a mild cleanser.\",\n    \"Consider using over-the-counter acne treatments containing salicylic acid or benzoyl peroxide.\",\n    \"Avoid picking or squeezing spots to prevent scarring and further irritation.\",\n    \"Consult a dermatologist or qualified clinician if the condition worsens or does not improve with home care.\"\n  ],\n  \"safety_note\": \"This is not a medical diagnosis. A dermatologist or qualified clinician can confirm it.\",\n  \"suggested_follow_ups\": [\n    \"What are effective over-the-counter treatments?\",\n    \"When should I see a doctor for acne?\",\n    \"How can I prevent future breakouts?\",\n    \"What skincare routine is best for acne?\"\n  ],\n  \"severity_index\": 3\n}",
+        "suggested_follow_ups": [
+          "What are effective over-the-counter treatments?",
+          "When should I see a doctor for acne?",
+          "How can I prevent future breakouts?",
+          "What skincare routine is best for acne?"
+        ],
+        "timestamp": "2026-05-28T08:39:28.078618+00:00"
+      }
+    ],
+    "images": [
+      {
+        "image_id": "6b9e9d7f-a613-4eb1-bd1c-443962657bef",
+        "image_path": "temp_aknekomedot.jpg",
+        "uploaded_at": "2026-05-28T08:39:28.078618+00:00",
+        "width": 224,
+        "height": 224
+      }
+    ],
+    "prediction_history": [
+      {
+        "prediction_id": "46099d3b-dab7-4b0f-acb2-30b25f67093c",
+        "image_id": "2cfa92b7-3f61-4ded-a033-0fb29f640b5e",
+        "top_k": [
+          {
+            "label": "acne",
+            "score": 0.8217371106147766
+          },
+          {
+            "label": "rosacea",
+            "score": 0.11368000507354736
+          },
+          {
+            "label": "fungal infection",
+            "score": 0.028008783236145973
+          }
+        ],
+        "confidence": "high"
+      }
+    ],
+    "profile": {
+      "age": "25",
+      "gender": "male",
+      "lesion_area": null,
+      "timeline": null,
+      "notes": null
+    },
+    "severity_index": 3,
+    "marked_image_url": null
   }
 }

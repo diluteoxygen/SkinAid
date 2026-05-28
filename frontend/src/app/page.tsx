@@ -1,10 +1,12 @@
 "use client";
 
 import { useState, useRef, useEffect, useCallback } from "react";
-import { Copy, Plus, Send, ImageIcon, Loader2, Activity, PanelLeft, Moon, Sun, X, Trash2, ChevronLeft, ChevronRight, Upload, Camera, RefreshCw, Shield, Info, AlertTriangle, ClipboardList, Download, Share2, RotateCcw, ChevronDown, ChevronUp } from "lucide-react";
+import { Copy, Plus, Send, ImageIcon, Loader2, Activity, PanelLeft, Moon, Sun, X, Trash2, ChevronLeft, ChevronRight, Upload, Camera, RefreshCw, Shield, Info, AlertTriangle, ClipboardList, Download, Share2, RotateCcw, ChevronDown, ChevronUp, LogOut } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "next-themes";
+import { useRouter } from "next/navigation";
+import { createClient } from "@/lib/supabase";
 
 import { api, Prediction, ChatMessage, SessionDetailResponse, SessionListResponse, Metrics } from "@/lib/api";
 import { Button } from "@/components/ui/button";
@@ -215,6 +217,13 @@ function StructuredResultCard({ data, prediction, severityIndex, onAskFollowUp }
 }
 
 export default function Home() {
+  const router = useRouter();
+  const supabase = createClient();
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
+    router.push("/login");
+  };
+
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
@@ -276,7 +285,17 @@ export default function Home() {
     return () => mq.removeEventListener("change", handler);
   }, []);
 
-  useEffect(() => { loadSessions(); }, []);
+  useEffect(() => {
+    const checkAuthAndLoad = async () => {
+      const { data: { session } } = await supabase.auth.getSession();
+      if (!session) {
+        router.push("/login");
+      } else {
+        loadSessions();
+      }
+    };
+    checkAuthAndLoad();
+  }, [router, supabase.auth]);
 
   useEffect(() => {
     if (scrollRef.current) {
@@ -496,9 +515,19 @@ export default function Home() {
         setMetrics(res.metrics);
       }
 
+      let suggestedFollowUps: string[] | undefined = undefined;
+      try {
+        const parsed = JSON.parse(res.gemini_response);
+        if (parsed && parsed.suggested_follow_ups) {
+          suggestedFollowUps = parsed.suggested_follow_ups;
+        }
+      } catch (e) {
+        // ignore
+      }
+
       setMessages([
         { role: "user", content: "Uploaded an image for analysis." },
-        { role: "assistant", content: res.gemini_response }
+        { role: "assistant", content: res.gemini_response, suggested_follow_ups: suggestedFollowUps }
       ]);
 
       loadSessions();
@@ -639,6 +668,16 @@ export default function Home() {
             {theme === 'dark' ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
             {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
           </button>
+          <button
+            onClick={handleLogout}
+            className="w-full mt-2 flex items-center gap-2.5 px-3 py-2 rounded-[10px] text-[13px] transition-all duration-200"
+            style={{ color: 'var(--text-secondary)' }}
+            onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = 'var(--sidebar-hover)'; (e.currentTarget as HTMLElement).style.color = 'var(--danger)'; }}
+            onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = 'transparent'; (e.currentTarget as HTMLElement).style.color = 'var(--text-secondary)'; }}
+          >
+            <LogOut className="h-4 w-4" />
+            Log Out
+          </button>
         </div>
       )}
     </>
@@ -777,15 +816,27 @@ export default function Home() {
                   </button>
                 )}
                 {!isMobile && (
-                  <button
-                    onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-                    className="p-2 rounded-full transition-colors"
-                    style={{ color: 'var(--text-secondary)' }}
-                    onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = 'var(--surface-secondary)'; }}
-                    onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = 'transparent'; }}
-                  >
-                    {theme === 'dark' ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
-                  </button>
+                  <>
+                    <button
+                      onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                      className="p-2 rounded-full transition-colors"
+                      style={{ color: 'var(--text-secondary)' }}
+                      onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = 'var(--surface-secondary)'; }}
+                      onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = 'transparent'; }}
+                    >
+                      {theme === 'dark' ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+                    </button>
+                    <button
+                      onClick={handleLogout}
+                      className="p-2 rounded-full transition-colors flex items-center justify-center"
+                      style={{ color: 'var(--text-secondary)' }}
+                      onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = 'var(--surface-secondary)'; (e.currentTarget as HTMLElement).style.color = 'var(--danger)'; }}
+                      onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = 'transparent'; (e.currentTarget as HTMLElement).style.color = 'var(--text-secondary)'; }}
+                      title="Log Out"
+                    >
+                      <LogOut className="h-4 w-4" />
+                    </button>
+                  </>
                 )}
               </div>
             )}
@@ -1104,7 +1155,8 @@ export default function Home() {
                 <AnimatePresence initial={false}>
                   {messages.map((msg, idx) => {
                     let parsedData = null;
-                    if (idx === 0 && msg.role === 'assistant') {
+                    const firstAssistantIdx = messages.findIndex(m => m.role === 'assistant');
+                    if (idx === firstAssistantIdx && msg.role === 'assistant') {
                       try {
                         const testParse = JSON.parse(msg.content);
                         if (testParse && testParse.primary_match) {
@@ -1278,11 +1330,14 @@ export default function Home() {
                 if (lastMsg?.role === 'assistant') {
                   if (lastMsg.suggested_follow_ups && lastMsg.suggested_follow_ups.length > 0) {
                     chips = lastMsg.suggested_follow_ups;
-                  } else if (messages.length === 1) {
-                    try {
-                      const parsed = JSON.parse(lastMsg.content);
-                      chips = parsed.suggested_follow_ups || [];
-                    } catch (e) {}
+                  } else {
+                    const firstAssistantIdx = messages.findIndex(m => m.role === 'assistant');
+                    if (firstAssistantIdx !== -1 && firstAssistantIdx === messages.length - 1) {
+                      try {
+                        const parsed = JSON.parse(lastMsg.content);
+                        chips = parsed.suggested_follow_ups || [];
+                      } catch (e) {}
+                    }
                   }
                 }
                 return chips.length > 0 && !isChatting && !isUploading ? (
