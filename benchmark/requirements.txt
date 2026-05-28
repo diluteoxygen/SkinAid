@@ -1,0 +1,15 @@
+torch
+torchvision
+timm
+open_clip_torch
+safetensors
+scikit-learn
+pandas
+numpy
+matplotlib
+seaborn
+opencv-python
+pillow
+tqdm
+google-genai
+pyyaml
