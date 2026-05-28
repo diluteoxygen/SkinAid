@@ -109,13 +109,16 @@ function StructuredResultCard({ data, prediction, severityIndex, onAskFollowUp, 
           Confidence Distribution
         </h3>
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-          {prediction.top_k.map((p, i) => (
-            <div key={i} className="p-3 rounded-xl border flex flex-col items-center justify-center text-center relative overflow-hidden" style={{ borderColor: 'var(--border-secondary)' }}>
-               <div className="absolute inset-0" style={{ background: 'var(--accent)', opacity: Math.max(0.04, p.score * 0.8) }} />
-               <span className="relative z-10 text-[16px] font-bold" style={{ color: 'var(--text-primary)' }}>{(p.score * 100).toFixed(1)}%</span>
-               <span className="relative z-10 text-[11px] font-medium mt-1 uppercase tracking-wider line-clamp-1" style={{ color: 'var(--text-secondary)' }}>{p.label.replace(/_/g, ' ')}</span>
-            </div>
-          ))}
+          {prediction.top_k.map((p, i) => {
+            const isHighConfidence = p.score > 0.35;
+            return (
+              <div key={i} className="p-3 rounded-xl border flex flex-col items-center justify-center text-center relative overflow-hidden min-h-[72px]" style={{ borderColor: 'var(--border-secondary)' }}>
+                 <div className="absolute inset-0" style={{ background: 'var(--accent)', opacity: Math.max(0.04, p.score * 0.85) }} />
+                 <span className="relative z-10 text-[15px] font-bold" style={{ color: isHighConfidence ? 'var(--accent-text)' : 'var(--text-primary)' }}>{(p.score * 100).toFixed(1)}%</span>
+                 <span className="relative z-10 text-[10px] font-semibold mt-1 uppercase tracking-wider line-clamp-2 px-1" style={{ color: isHighConfidence ? 'var(--accent-text)' : 'var(--text-secondary)', opacity: isHighConfidence ? 0.9 : 1 }}>{p.label.replace(/_/g, ' ')}</span>
+              </div>
+            );
+          })}
 
           {/* Severity Index */}
           {(severityIndex !== null || data.severity_index) && (
