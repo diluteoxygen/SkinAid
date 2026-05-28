@@ -109,33 +109,39 @@ export const api = {
   },
 
   getSessions: async (): Promise<SessionListResponse[]> => {
-    const res = await fetch(`${BASE_URL}/sessions`, {
-      headers: await getAuthHeaders(),
-    });
-    if (!res.ok) {
-      throw new Error("Failed to fetch sessions");
-    }
-    return res.json();
+    const supabase = createClient();
+    const { data, error } = await supabase
+      .from("sessions")
+      .select("session_id, created_at, title")
+      .order("created_at", { ascending: false });
+    
+    if (error) throw new Error(error.message);
+    return data as SessionListResponse[];
   },
 
   getSession: async (id: string): Promise<SessionDetailResponse> => {
-    const res = await fetch(`${BASE_URL}/sessions/${id}`, {
-      headers: await getAuthHeaders(),
-    });
-    if (!res.ok) {
-      throw new Error("Failed to fetch session details");
-    }
-    return res.json();
+    const supabase = createClient();
+    const [sessionRes, messagesRes, imagesRes, predsRes] = await Promise.all([
+      supabase.from("sessions").select("*").eq("session_id", id).single(),
+      supabase.from("messages").select("*").eq("session_id", id).order("timestamp", { ascending: true }),
+      supabase.from("images").select("*").eq("session_id", id),
+      supabase.from("prediction_history").select("*").eq("session_id", id)
+    ]);
+
+    if (sessionRes.error) throw new Error(sessionRes.error.message);
+    
+    return {
+      ...sessionRes.data,
+      messages: messagesRes.data || [],
+      images: imagesRes.data || [],
+      prediction_history: predsRes.data || []
+    } as SessionDetailResponse;
   },
 
   deleteSession: async (id: string): Promise<{status: string}> => {
-    const res = await fetch(`${BASE_URL}/sessions/${id}`, {
-      method: "DELETE",
-      headers: await getAuthHeaders(),
-    });
-    if (!res.ok) {
-      throw new Error("Failed to delete session");
-    }
-    return res.json();
+    const supabase = createClient();
+    const { error } = await supabase.from("sessions").delete().eq("session_id", id);
+    if (error) throw new Error(error.message);
+    return { status: "success" };
   }
 };
