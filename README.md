@@ -1,0 +1,12 @@
+---
+title: Skinaid
+emoji: 🏆
+colorFrom: red
+colorTo: purple
+sdk: docker
+pinned: false
+license: mit
+short_description: Cross-modal AI framework for dermatological disease analysis
+---
+
+Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
