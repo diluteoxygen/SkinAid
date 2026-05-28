@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect, useCallback } from "react";
-import { Copy, Plus, Send, ImageIcon, Loader2, Activity, PanelLeft, Moon, Sun, X, Trash2, ChevronLeft, ChevronRight, Upload, Camera, RefreshCw, Shield, Info, AlertTriangle, ClipboardList, Download, Share2, RotateCcw, ChevronDown, ChevronUp, LogOut } from "lucide-react";
+import { Copy, Plus, Send, ImageIcon, Loader2, Activity, PanelLeft, Moon, Sun, X, Trash2, ChevronLeft, ChevronRight, Upload, Camera, RefreshCw, Shield, Info, AlertTriangle, ClipboardList, Download, Share2, RotateCcw, ChevronDown, ChevronUp, LogOut, SquarePen } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "next-themes";
@@ -616,27 +616,23 @@ export default function Home() {
   /* ─── Sidebar content (shared between desktop & mobile) ─── */
   const SidebarContent = () => (
     <>
-      {/* Logo area */}
-      <div className="px-4 pt-5 pb-3 flex items-center justify-between">
-        <div className="flex items-center gap-2.5">
-          <div className="w-8 h-8 rounded-[10px] flex items-center justify-center"
-            style={{ background: 'var(--accent)', color: 'var(--accent-text)' }}>
-            <Activity className="h-4 w-4" />
-          </div>
-          <span className="font-semibold text-[15px] tracking-tight" style={{ color: 'var(--text-primary)' }}>
-            SkinAid
-          </span>
+      {/* Sidebar header — unified with navbar */}
+      <div className="h-[52px] px-4 flex items-center justify-between shrink-0" style={{ borderBottom: '1px solid var(--sidebar-border)' }}>
+        <span className="text-[11px] font-semibold uppercase tracking-widest" style={{ color: 'var(--text-tertiary)' }}>
+          History
+        </span>
+        <div className="flex items-center gap-1">
+          {isMobile && (
+            <button onClick={() => setSidebarOpen(false)} className="p-1.5 rounded-lg transition-colors"
+              style={{ color: 'var(--text-secondary)' }}>
+              <X className="h-4 w-4" />
+            </button>
+          )}
         </div>
-        {isMobile && (
-          <button onClick={() => setSidebarOpen(false)} className="p-1.5 rounded-lg transition-colors"
-            style={{ color: 'var(--text-secondary)' }}>
-            <X className="h-4 w-4" />
-          </button>
-        )}
       </div>
 
       {/* New Analysis button */}
-      <div className="px-3 pb-2">
+      <div className="px-3 pt-3 pb-2">
         <button
           onClick={handleNewSession}
           className="w-full flex items-center gap-2.5 px-3.5 py-2.5 rounded-[12px] text-[13px] font-medium transition-all duration-200"
@@ -812,83 +808,61 @@ export default function Home() {
                 <PanelLeft className="h-5 w-5" />
               </button>
             )}
-            <h1 className="font-semibold text-[15px] tracking-tight flex items-center gap-2"
-              style={{ color: 'var(--text-primary)' }}>
-              {currentSessionId ? (
-                sessions.find(s => s.session_id === currentSessionId)?.title || 'Analysis'
-              ) : (
-                <>SkinAid</>
-              )}
-            </h1>
+            <div className="flex items-center gap-2.5">
+              <div className="w-7 h-7 rounded-[8px] flex items-center justify-center"
+                style={{ background: 'var(--accent)', color: 'var(--accent-text)' }}>
+                <Activity className="h-3.5 w-3.5" />
+              </div>
+              <h1 className="font-semibold text-[15px] tracking-tight"
+                style={{ color: 'var(--text-primary)' }}>
+                SkinAid
+              </h1>
+            </div>
           </div>
 
-          <div className="flex items-center gap-2">
-            {metrics && (
-              <div
-                className="flex items-center gap-2.5 text-[11px] px-3 py-1.5 rounded-full"
-                style={{
-                  background: 'var(--surface-secondary)',
-                  color: 'var(--text-secondary)',
-                  border: '1px solid var(--border-secondary)',
-                }}
-              >
-                <Activity className="h-3 w-3" style={{ color: 'var(--accent)' }} />
-                <span>
-                  <span className="font-semibold" style={{ color: 'var(--text-primary)' }}>
-                    {metrics.latency_ms.toFixed(0)}
-                  </span> ms
-                </span>
-                {metrics.memory_mb > 0 && (
-                  <span>
-                    · <span className="font-semibold" style={{ color: 'var(--text-primary)' }}>
-                      {metrics.memory_mb.toFixed(1)}
-                    </span> MB
-                  </span>
-                )}
-              </div>
-            )}
-
-            {/* Desktop theme toggle (compact) */}
+          <div className="flex items-center gap-1.5">
             {/* Nav Actions */}
             {mounted && (
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-1">
                 {wikiData && !rightSidebarOpen && (
                   <button 
                     onClick={() => setRightSidebarOpen(true)} 
-                    className="p-2 rounded-full transition-colors flex items-center justify-center" 
-                    style={{ background: 'var(--surface-secondary)', color: 'var(--text-primary)' }}
+                    className="p-2 rounded-lg transition-colors flex items-center justify-center" 
+                    style={{ color: 'var(--text-secondary)' }}
+                    onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = 'var(--surface-secondary)'; }}
+                    onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = 'transparent'; }}
                     title="View Wikipedia Info"
                   >
                     <FontAwesomeIcon icon={byPrefixAndName.fab['wikipedia-w']} className="h-4 w-4" />
                   </button>
                 )}
                 {!isMobile && (
-                  <>
-                    <button
-                      onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-                      className="p-2 rounded-full transition-colors"
-                      style={{ color: 'var(--text-secondary)' }}
-                      onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = 'var(--surface-secondary)'; }}
-                      onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = 'transparent'; }}
-                    >
-                      {theme === 'dark' ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
-                    </button>
-                    <button
-                      onClick={handleLogout}
-                      className="p-2 rounded-full transition-colors flex items-center justify-center"
-                      style={{ color: 'var(--text-secondary)' }}
-                      onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = 'var(--surface-secondary)'; (e.currentTarget as HTMLElement).style.color = 'var(--danger)'; }}
-                      onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = 'transparent'; (e.currentTarget as HTMLElement).style.color = 'var(--text-secondary)'; }}
-                      title="Log Out"
-                    >
-                      <LogOut className="h-4 w-4" />
-                    </button>
-                  </>
+                  <button
+                    onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                    className="p-2 rounded-lg transition-colors"
+                    style={{ color: 'var(--text-secondary)' }}
+                    onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = 'var(--surface-secondary)'; }}
+                    onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = 'transparent'; }}
+                  >
+                    {theme === 'dark' ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+                  </button>
                 )}
               </div>
             )}
+
+            {/* New Scan pen icon */}
+            <button
+              onClick={handleNewSession}
+              className="p-2 rounded-lg transition-colors flex items-center justify-center"
+              style={{ color: 'var(--text-secondary)' }}
+              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = 'var(--surface-secondary)'; (e.currentTarget as HTMLElement).style.color = 'var(--text-primary)'; }}
+              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = 'transparent'; (e.currentTarget as HTMLElement).style.color = 'var(--text-secondary)'; }}
+              title="New Scan"
+            >
+              <SquarePen className="h-[18px] w-[18px]" />
+            </button>
           </div>
-</header>
+        </header>
 
         {/* ─── Upload / Empty State ─── */}
         {!currentSessionId && !isUploading && messages.length === 0 ? (
