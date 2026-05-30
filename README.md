@@ -117,11 +117,9 @@ Open `http://localhost:3000` in your browser to start using SkinAid!
 SkinAid is made possible by our amazing contributors. 
 
 <!-- CONTRIBUTORS_START -->
-<div align="center" style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-  <a href="https://github.com/abhaygit1819" style="text-decoration: none; text-align: center;">
-    <img src="https://github.com/abhaygit1819.png" width="60px" style="border-radius: 50%;" alt="Abhay Gupta"/>
-    <br/>
-    <sub style="color: inherit;"><b>Abhay Gupta</b></sub>
+<div align="center">
+  <a href="https://github.com/diluteoxygen/skinaid/graphs/contributors">
+    <img src="https://contrib.rocks/image?repo=diluteoxygen/skinaid" />
   </a>
   <a href="https://github.com/diluteoxygen" style="text-decoration: none; text-align: center;">
     <img src="https://github.com/diluteoxygen.png" width="60px" style="border-radius: 50%;" alt="Vikrant Singh"/>
@@ -129,10 +127,9 @@ SkinAid is made possible by our amazing contributors.
     <sub style="color: inherit;"><b>Vikrant Singh</b></sub>
   </a>
 </div>
-<!-- CONTRIBUTORS_END -->
 
-> **Want to be added to this list?**
-> Simply add your name to the [`CONTRIBUTORS.md`](./CONTRIBUTORS.md) file! A GitHub Action will automatically fetch your profile picture and add it here.
+Made with [contrib.rocks](https://contrib.rocks).
+<!-- CONTRIBUTORS_END -->
 
 ---
 
