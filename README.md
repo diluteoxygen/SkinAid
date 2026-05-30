@@ -1,138 +1,102 @@
 <div align="center">
   <h1>🏥 SkinAid</h1>
-  <p><b>Cross-modal AI framework for dermatological disease analysis</b></p>
+  <p><strong>Cross-modal AI framework for dermatological disease analysis</strong></p>
 </div>
 
-<p align="center">
-  <a href="#-project-description">Project Description</a> •
-  <a href="#-screenshots">Screenshots</a> •
-  <a href="#-hosting--architecture">Architecture</a> •
-  <a href="#-setup-guide">Setup Guide</a> •
-  <a href="#-contributors">Contributors</a>
-</p>
+---
 
 ## 📖 Project Description
 
-**SkinAid** is a comprehensive, state-of-the-art AI-powered application designed for dermatological disease analysis. By leveraging multi-modal AI models, SkinAid provides quick, accurate, and insightful analysis of skin conditions from uploaded images and contextual information.
+SkinAid is an advanced dermatological analysis tool that leverages artificial intelligence to assist in identifying and understanding skin conditions. By combining computer vision models (OpenCLIP) with Large Language Models (Google GenAI/Gemini), SkinAid provides a comprehensive, cross-modal approach to analyzing skin lesions and conditions.
 
-The platform is built with a modern tech stack, ensuring scalability, speed, and a great user experience:
-- **Frontend**: A highly responsive, interactive UI built with Next.js 15, React 19, and Tailwind CSS.
-- **Backend**: A robust, fast API powered by FastAPI (Python), seamlessly integrating with Hugging Face models and Google GenAI.
-- **Database**: Supabase for secure, real-time database management and authentication.
+Users can upload images of skin concerns along with optional profile metadata (age, gender, lesion area, timeline, notes) to receive a preliminary analysis, severity index, and suggested follow-ups, all within an intuitive and visually appealing interface.
 
----
+**Key Features:**
+- 🔍 **Image Analysis**: Powered by OpenCLIP and PyTorch for precise visual inference.
+- 🤖 **AI Assistant**: Conversational chat interface utilizing Google Gemini to answer questions about the analysis.
+- 🔐 **Secure & Scalable**: Authentication and database management through Supabase.
+- 🎨 **Modern Interface**: A sleek, responsive Next.js frontend with Tailwind CSS v4 and Framer Motion animations.
 
-## 📸 Screenshots
+## 🏗️ Architecture & Hosting
 
-*(Replace the placeholder URLs with actual paths to your screenshots, e.g., `./public/screenshots/home.png`)*
+SkinAid is built with a decoupled architecture, separating the client interface from the heavy AI inference workloads.
 
-| Home Page | Analysis Dashboard |
-| :---: | :---: |
-| <img src="https://via.placeholder.com/600x350?text=Home+Page" alt="Home Page"> | <img src="https://via.placeholder.com/600x350?text=Analysis+Dashboard" alt="Dashboard"> |
-| **User Profile / Dashboard** | **Mobile Responsive View** |
-| <img src="https://via.placeholder.com/600x350?text=Profile" alt="Profile"> | <img src="https://via.placeholder.com/200x350?text=Mobile" alt="Mobile View" width="200"> |
-
----
-
-## 🚀 Hosting & Architecture
-
-The project is decoupled into two independent repositories/folders to maintain a clean architecture and optimal hosting strategies.
-
-- **Frontend (Next.js Application)**
-  - **Hosted on**: [Vercel](https://vercel.com/)
-  - **Directory**: `/frontend`
-  - Vercel provides edge network capabilities, giving the Next.js application instant load times and CI/CD out of the box.
-
-- **Backend (FastAPI & AI Models)**
-  - **Hosted on**: [Hugging Face Spaces](https://huggingface.co/spaces) (Docker SDK)
-  - **Directory**: `/backend`
-  - Hugging Face Spaces is ideal for our Python backend, as it natively supports machine learning inference, large model weights, and heavy compute requirements.
-
----
+- **Frontend**: Next.js (React 19), Tailwind CSS, Framer Motion.
+  - 🚀 **Hosted on**: **Vercel**
+- **Backend**: Python, FastAPI, PyTorch, OpenCLIP, Google GenAI.
+  - 🚀 **Hosted on**: **Hugging Face Spaces** (Dockerized)
+- **Database & Auth**: 
+  - 🗄️ **Hosted on**: **Supabase**
 
 ## ⚙️ Setup Guide
 
-Follow these steps to run SkinAid locally on your machine.
+To run SkinAid locally, you will need to set up both the backend and frontend servers, as well as a Supabase project.
 
-### Prerequisites
-- [Node.js](https://nodejs.org/) (v18 or higher)
-- [Python](https://www.python.org/) (3.10 or higher)
-- [Git](https://git-scm.com/)
-- API Keys:
-  - [Supabase](https://supabase.com/) Account & Project
-  - [Google Gemini API Key](https://aistudio.google.com/)
-
-### 1. Clone the repository
-```bash
-git clone https://github.com/yourusername/SkinAid.git
-cd SkinAid
-```
+### 1. Prerequisites
+- Node.js (v18+ recommended)
+- Python (3.9+ recommended)
+- A Supabase account and project
+- Google Gemini API Key
 
 ### 2. Backend Setup
-The backend manages the AI model inference and database connections.
-
+Navigate to the `backend` directory:
 ```bash
-# Navigate to the backend directory
 cd backend
+```
 
-# Create and activate a virtual environment
+Create a virtual environment and install dependencies:
+```bash
 python -m venv .venv
-source .venv/bin/activate  # On Windows: .venv\Scripts\activate
-
-# Install required Python dependencies
+source .venv/bin/activate  # On Windows use: .venv\Scripts\activate
 pip install -r requirements.txt
+```
 
-# Create a .env file based on the environment variables needed
-echo "SUPABASE_URL=your_supabase_url" >> .env
-echo "SUPABASE_KEY=your_supabase_key" >> .env
-echo "GEMINI_API_KEY=your_gemini_api_key" >> .env
+Set up your environment variables. Create a `.env` file in the `backend` directory:
+```env
+SUPABASE_URL=your_supabase_url
+SUPABASE_KEY=your_supabase_anon_key
+SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key
+SUPABASE_JWT_SECRET=your_supabase_jwt_secret
+ALLOWED_ORIGINS=http://localhost:3000
+```
 
-# Run the FastAPI development server
+Run the FastAPI server:
+```bash
 uvicorn main:app --reload --port 8000
 ```
-The API will be available at `http://localhost:8000`. You can view the API documentation at `http://localhost:8000/docs`.
+*The backend will be available at `http://localhost:8000`.*
 
 ### 3. Frontend Setup
-The frontend provides the user interface for interacting with the AI.
-
+Open a new terminal and navigate to the `frontend` directory:
 ```bash
-# Open a new terminal and navigate to the frontend directory
 cd frontend
+```
 
-# Install Node.js dependencies
+Install dependencies:
+```bash
 npm install
+```
 
-# Create a local environment file
-echo "NEXT_PUBLIC_API_URL=http://localhost:8000" > .env.local
+Set up your environment variables. Create a `.env.local` file in the `frontend` directory:
+```env
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+NEXT_PUBLIC_API_URL=http://localhost:8000
+```
 
-# Run the Next.js development server
+Run the Next.js development server:
+```bash
 npm run dev
 ```
-Open `http://localhost:3000` in your browser to start using SkinAid!
+*The frontend will be available at `http://localhost:3000`.*
 
----
+### 4. Database Setup
+Execute the `supabase_schema.sql` file located in the root directory in your Supabase project's SQL Editor to set up the necessary tables and policies.
 
 ## 🤝 Contributors
 
-SkinAid is made possible by our amazing contributors. 
+Thanks to everyone who has contributed to this project!
 
-<!-- CONTRIBUTORS_START -->
-<div align="center">
-  <a href="https://github.com/diluteoxygen/skinaid/graphs/contributors">
-    <img src="https://contrib.rocks/image?repo=diluteoxygen/skinaid" />
-  </a>
-  <a href="https://github.com/diluteoxygen" style="text-decoration: none; text-align: center;">
-    <img src="https://github.com/diluteoxygen.png" width="60px" style="border-radius: 50%;" alt="Vikrant Singh"/>
-    <br/>
-    <sub style="color: inherit;"><b>Vikrant Singh</b></sub>
-  </a>
-</div>
-
-Made with [contrib.rocks](https://contrib.rocks).
-<!-- CONTRIBUTORS_END -->
-
----
-
-<div align="center">
-  <p>Built with ❤️ for better dermatological care.</p>
-</div>
+<a href="https://github.com/diluteoxygen/SkinAid/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=diluteoxygen/SkinAid" alt="Contributors" />
+</a>
