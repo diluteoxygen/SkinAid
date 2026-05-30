@@ -123,6 +123,11 @@ SkinAid is made possible by our amazing contributors.
     <br/>
     <sub style="color: inherit;"><b>Abhay Gupta</b></sub>
   </a>
+  <a href="https://github.com/diluteoxygen" style="text-decoration: none; text-align: center;">
+    <img src="https://github.com/diluteoxygen.png" width="60px" style="border-radius: 50%;" alt="Vikrant Singh"/>
+    <br/>
+    <sub style="color: inherit;"><b>Vikrant Singh</b></sub>
+  </a>
 </div>
 <!-- CONTRIBUTORS_END -->
 
