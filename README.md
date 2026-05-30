@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>🏥 SkinAid</h1>
+  <h1>Cross-Modal AI Framework for Dermatological Disease Analysis</h1>
   <p><strong>Cross-modal AI framework for dermatological disease analysis</strong></p>
 </div>
 
