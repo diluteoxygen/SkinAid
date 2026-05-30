@@ -1,6 +1,7 @@
 <div align="center">
   <h1>Cross-Modal AI Framework for Dermatological Disease Analysis</h1>
-
+<div>
+---
 ## 📖 Project Description
 
 SkinAid is an advanced dermatological analysis tool that leverages artificial intelligence to assist in identifying and understanding skin conditions. By combining computer vision models (OpenCLIP) with Large Language Models (Google GenAI/Gemini), SkinAid provides a comprehensive, cross-modal approach to analyzing skin lesions and conditions.
