@@ -1,7 +1,5 @@
 <div align="center">
   <h1>Cross-Modal AI Framework for Dermatological Disease Analysis</h1>
-</div>
-
 ---
 
 ## 📖 Project Description
